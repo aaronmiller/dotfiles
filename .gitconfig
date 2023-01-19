@@ -1,0 +1,18 @@
+[user]
+	name = Aaron Miller
+	email = amiller719@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = emacs -nw
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+[advice]
+	addIgnoredFile = false
+[remote "origin"]
+	prune = true
+[init]
+	defaultBranch = main
