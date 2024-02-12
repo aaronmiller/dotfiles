@@ -99,9 +99,6 @@ key_bindings:
   # swap windows going right
   - {key: Period, mods: Command, chars: "\x02\x2e"}
 
-  # clear history
-  - {key: K, mods: Control, chars: "\x02\x0b"}
-
   # cycle panes
   - {key: LBracket, mods: Command|Option, chars: "\x02\x4f"}
   - {key: RBracket, mods: Command|Option, chars: "\x02\x6f"}
