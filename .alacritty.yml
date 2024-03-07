@@ -24,29 +24,29 @@ font:
     style: "Bold Italic"
   size: 12
 
-# Colors (Everforest Dark)
+# Colors (Nord Aurora)
 colors:
   primary:
-    background: '#2d353b'
-    foreground: '#d3c6aa'
+    background: '#2E3440'
+    foreground: '#c6c6c6'
   normal:
-    black: '#475258'
-    red: '#e67e80'
-    green: '#a7c080'
-    yellow: '#dbbc7f'
-    blue: '#7fbbb3'
-    magenta: '#d699b6'
-    cyan: '#83c092'
-    white: '#d3c6aa'
+    black: '#434C5E'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#88C0D0'
+    white: '#E5E9F0'
   bright:
-    black: '#475258'
-    red: '#e67e80'
-    green: '#a7c080'
-    yellow: '#dbbc7f'
-    blue: '#7fbbb3'
-    magenta: '#d699b6'
-    cyan: '#83c092'
-    white: '#d3c6aa'
+    black: '#4C566A'
+    red: '#D08770'
+    green: '#8FBCBB'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#5D80AE'
+    cyan: '#8FBCBB'
+    white: '#ECEFF4'
 
 cursor:
   style:
