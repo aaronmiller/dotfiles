@@ -131,7 +131,6 @@
       :nvie "s-9" #'+workspace/switch-to-final
       :nvie "s-<return>" #'toggle-frame-fullscreen)
 
-(setq-hook! 'c-mode-common-hook yasnippet-snippets-dir "~/.doom.d/snippets/")
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
@@ -270,6 +269,11 @@
 (use-package! yaml-mode
   :hook
   (yaml-mode . toggle-truncate-lines))
+
+(use-package! yasnippet
+  :config
+  (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
+                                 '("~/.doom.d/snippets") nil)))
 
 ;; Custom functions
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/functions"))
