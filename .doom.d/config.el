@@ -194,6 +194,18 @@
                                        (highlight-indent-guides-mode)
                                        (highlight-indent-guides-mode))))
 
+(use-package! hl-todo
+  :config
+  (setq! hl-todo-keyword-faces (apply 'append hl-todo-keyword-faces nil
+                                      '(("HOLD" . "#d0bf8f")
+                                        ("NEXT" . "#dca3a3")
+                                        ("OK" . "#a3be8c")
+                                        ("FAIL" . "#bf616a")
+                                        ("DONE" . "#afd8af")
+                                        ("MAYBE" . "#d0bf8f")
+                                        ("KLUDGE" . "#d0bf8f")
+                                        ("TEMP" . "#d0bf8f")) nil)))
+
 (use-package! jinja2-mode
   :hook
   (jinja2-mode . toggle-truncate-lines))
