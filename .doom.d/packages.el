@@ -59,6 +59,7 @@
 (package! gh)
 (package! gh-md)
 (package! git-modes)
+(package! google-c-style)
 (package! rego-mode)
 (package! treemacs-nerd-icons :recipe (:host github :repo "aaronmiller/treemacs-nerd-icons" :branch "amiller"))
 (package! vterm :recipe (:host github :repo "aaronmiller/emacs-libvterm" :branch "amiller"))
