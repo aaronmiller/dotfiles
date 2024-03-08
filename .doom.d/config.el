@@ -97,9 +97,6 @@
   '(line-number :height 0.8 :weight bold :background nil)
   '(line-number-current-line :height 0.8 :weight bold :background nil))
 
-;; Temp hook for c-mode-hook
-(setq-hook! 'c-mode-hook yasnippet-snippets-dir "~/.emacs.d/snippets")
-
 (global-set-key (kbd "M-s-;") #'+workspace/switch-right)
 (global-set-key (kbd "M-s-<left>") #'previous-buffer)
 (global-set-key (kbd "M-s-<right>") #'next-buffer)
@@ -133,6 +130,9 @@
       :nvie "s-8" #'+workspace/switch-to-7
       :nvie "s-9" #'+workspace/switch-to-final
       :nvie "s-<return>" #'toggle-frame-fullscreen)
+
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
 
 (use-package! company
   :config
