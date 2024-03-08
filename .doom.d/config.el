@@ -131,6 +131,7 @@
       :nvie "s-9" #'+workspace/switch-to-final
       :nvie "s-<return>" #'toggle-frame-fullscreen)
 
+(setq-hook! 'c-mode-common-hook yasnippet-snippets-dir "~/.doom.d/snippets/")
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
