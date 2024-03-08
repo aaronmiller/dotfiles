@@ -131,8 +131,8 @@
       :nvie "s-9" #'+workspace/switch-to-final
       :nvie "s-<return>" #'toggle-frame-fullscreen)
 
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (use-package! company
   :config
