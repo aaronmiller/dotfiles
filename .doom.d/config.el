@@ -275,5 +275,10 @@
   (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
                                  '("~/.doom.d/snippets") nil)))
 
+(setq-hook! 'lsp-mode-hook +lsp-company-backends '(:separate company-yasnippet company-capf))
+
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "<tab>") nil))
+
 ;; Custom functions
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/functions"))
