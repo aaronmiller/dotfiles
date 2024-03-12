@@ -24,29 +24,35 @@ font:
     style: "Bold Italic"
   size: 12
 
-# Colors (Nord Aurora)
+# Colors (Wilmersdorf + Palenight)
 colors:
-  primary:
-    background: '#2E3440'
-    foreground: '#c6c6c6'
-  normal:
-    black: '#434C5E'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#88C0D0'
-    white: '#E5E9F0'
   bright:
-    black: '#4C566A'
-    red: '#D08770'
-    green: '#8FBCBB'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#5D80AE'
-    cyan: '#8FBCBB'
-    white: '#ECEFF4'
+    black: '#434750'
+    blue: '#b2cff0'
+    cyan: '#69abc5'
+    green: '#8fd7d6'
+    magenta: '#efccfd'
+    red: '#fa7193'
+    white: '#d3d3d3'
+    yellow: '#d1dfff'
+  cursor:
+    cursor: '#819cd6'
+    text: '#242837'
+  normal:
+    black: '#232635'
+    blue: '#a6c1e0'
+    cyan: '#7289bc'
+    green: '#5b94ab'
+    magenta: '#a6c1e0'
+    red: '#e06383'
+    white: '#c0c5ce'
+    yellow: '#cfcf9c'
+  primary:
+    background: '#292D3E'
+    foreground: '#c0c5ce'
+  selection:
+    background: '#242837'
+    text: '#c0c5ce'
 
 cursor:
   style:
