@@ -131,9 +131,6 @@
       :nvie "s-9" #'+workspace/switch-to-final
       :nvie "s-<return>" #'toggle-frame-fullscreen)
 
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-
 (use-package! company
   :config
   (setq! company-idle-delay 0
@@ -151,17 +148,7 @@
 (use-package! doom
   :config
   (setq! doom-big-font-increment 1
-         doom-font-increment 1)
-
-  (add-hook! '+doom-dashboard-functions
-    (hide-mode-line-mode)
-    (hl-line-mode -1))
-
-  (remove-hook! '+doom-dashboard-functions
-    #'doom-dashboard-widget-banner
-    #'doom-dashboard-widget-loaded)
-
-  (setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil)))
+         doom-font-increment 1))
 
 (use-package! doom-modeline
   :config
@@ -169,8 +156,6 @@
          doom-modeline-modal nil
          doom-modeline-vcs-max-length 100)
 
-  (remove-hook! 'doom-modeline-mode-hook
-    #'size-indication-mode)
   (line-number-mode -1))
 
 (use-package! doom-themes
@@ -188,12 +173,6 @@
   (setq! flycheck-clang-definitions '("_POSIX_C_SOURCE=200112L")
          flycheck-clang-language-standard "c89"))
 
-(use-package! highlight-indent-guides
-  :hook
-  ((prog-mode text-mode conf-mode) . (lambda ()
-                                       (highlight-indent-guides-mode)
-                                       (highlight-indent-guides-mode))))
-
 (use-package! hl-todo
   :config
   (setq! hl-todo-keyword-faces (apply 'append hl-todo-keyword-faces nil
@@ -206,10 +185,6 @@
                                         ("KLUDGE" . "#d0bf8f")
                                         ("TEMP" . "#d0bf8f")) nil)))
 
-(use-package! jinja2-mode
-  :hook
-  (jinja2-mode . toggle-truncate-lines))
-
 (use-package! magit
   :config
   (setq! magit-log-section-commit-count 25
@@ -218,9 +193,7 @@
 (use-package! projectile
   :config
   (setq! projectile-auto-discover t
-         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/") nil))
-
-  (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file))
+         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/") nil)))
 
 (use-package! recentf
   :config
@@ -254,8 +227,6 @@
 (use-package! vterm
   :custom
   (vterm-always-compile-module t)
-  :hook
-  (vterm-mode . evil-emacs-state)
   :config
   (setq! vterm-max-scrollback 100000)
 
@@ -266,19 +237,16 @@
         "s-<left>" (cmd! (vterm-send-key "\x61" nil nil t))
         "s-<right>" (cmd! (vterm-send-key "\x65" nil nil t))))
 
-(use-package! yaml-mode
-  :hook
-  (yaml-mode . toggle-truncate-lines))
-
 (use-package! yasnippet
   :config
   (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
                                  '("~/.doom.d/snippets") nil)))
 
-(setq-hook! 'lsp-mode-hook +lsp-company-backends '(:separate company-yasnippet company-capf))
-
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "<tab>") nil))
+
+;; Hooks
+(load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
 
 ;; Custom functions
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/functions"))
