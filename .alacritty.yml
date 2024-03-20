@@ -37,22 +37,22 @@ colors:
     yellow: '#d1dfff'
   cursor:
     cursor: '#819cd6'
-    text: '#242837'
+    text: '#1f2024'
   normal:
-    black: '#232635'
-    blue: '#a6c1e0'
+    black: '#1c1f2b'
+    blue: '#819cd6'
     cyan: '#7289bc'
     green: '#5b94ab'
     magenta: '#a6c1e0'
-    red: '#e06383'
-    white: '#c0c5ce'
+    red: '#e1c1ee'
+    white: '#a6accd'
     yellow: '#cfcf9c'
   primary:
-    background: '#292D3E'
-    foreground: '#c0c5ce'
+    background: '#292d3e'
+    foreground: '#eeffff'
   selection:
-    background: '#242837'
-    text: '#c0c5ce'
+    background: '#1f2024'
+    text: '#eeffff'
 
 cursor:
   style:
