@@ -168,10 +168,11 @@
   (setq! evil-emacs-state-cursor '(bar)
          evil-escape-key-sequence nil))
 
-(use-package! flycheck
-  :config
-  (setq! flycheck-clang-definitions '("_POSIX_C_SOURCE=200112L")
-         flycheck-clang-language-standard "c89"))
+;; Disabling flycheck c89 for now
+;; (use-package! flycheck
+;;   :config
+;;   (setq! flycheck-clang-definitions '("_POSIX_C_SOURCE=200112L")
+;;          flycheck-clang-language-standard "c89"))
 
 (use-package! hl-todo
   :config
