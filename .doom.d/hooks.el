@@ -11,7 +11,7 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (add-hook 'before-save-hook #'python-black-buffer nil t)
-            (add-hook 'before-save-hook #'lsp-organize-imports nil t)))
+            (add-hook 'before-save-hook #'py-isort-buffer nil t)))
 
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
