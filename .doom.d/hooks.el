@@ -15,6 +15,10 @@
 
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
+
+(add-hook! '(conf-mode-hook text-mode-hook prog-mode-hook)
+           #'display-fill-column-indicator-mode)
+
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
 (add-hook! 'yaml-mode-hook #'toggle-truncate-lines)
 
@@ -30,4 +34,6 @@
   #'size-indication-mode)
 
 (setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
-(setq-hook! 'lsp-mode-hook +lsp-company-backends '(:separate company-yasnippet company-capf))
+
+(setq-hook! 'lsp-mode-hook +lsp-company-backends
+            '(:separate company-yasnippet company-capf))
