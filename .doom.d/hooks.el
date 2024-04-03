@@ -16,7 +16,7 @@
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
 
-(add-hook! '(conf-mode-hook text-mode-hook prog-mode-hook)
+(add-hook! '(conf-mode-hook prog-mode-hook)
            #'display-fill-column-indicator-mode)
 
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
