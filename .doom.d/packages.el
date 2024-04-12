@@ -63,6 +63,7 @@
 (package! google-c-style)
 (package! python-black)
 (package! rego-mode)
+(package! shfmt)
 (package! treemacs-nerd-icons :recipe (:host github :repo "aaronmiller/treemacs-nerd-icons" :branch "amiller"))
 (package! vterm :recipe (:host github :repo "aaronmiller/emacs-libvterm" :branch "amiller"))
 (package! yasnippet-snippets)
