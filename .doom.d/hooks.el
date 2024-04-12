@@ -15,6 +15,7 @@
 
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
+(add-hook! 'sh-mode-hook #'shfmt-on-save-mode)
 
 (add-hook! '(conf-mode-hook prog-mode-hook)
            #'display-fill-column-indicator-mode)
