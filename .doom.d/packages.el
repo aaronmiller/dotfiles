@@ -54,6 +54,7 @@
 
 (package! browse-at-remote)
 (package! clang-format)
+(package! devdocs)
 (package! doom-snippets :disable t)
 (package! evil-tutor)
 (package! gh)
