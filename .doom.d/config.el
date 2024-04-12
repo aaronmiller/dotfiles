@@ -147,9 +147,12 @@
 
 (use-package! devdocs
   :config
-  (map! :ne "SPC d i" #'devdocs-install
+  (map! :ne "SPC d d" #'devdocs-delete
+        :ne "SPC d i" #'devdocs-install
         :ne "SPC d l" #'devdocs-lookup
-        :ne "SPC d p" #'devdocs-peruse))
+        :ne "SPC d p" #'devdocs-peruse
+        :ne "SPC d s" #'devdocs-search
+        :ne "SPC d u" #'devdocs-update-all))
 
 (use-package! doom
   :config
