@@ -145,6 +145,12 @@
   :config
   (setq! deft-new-file-format "%Y-%m-%d"))
 
+(use-package! devdocs
+  :config
+  (map! :ne "SPC d i" #'devdocs-install
+        :ne "SPC d l" #'devdocs-lookup
+        :ne "SPC d p" #'devdocs-peruse))
+
 (use-package! doom
   :config
   (setq! doom-big-font-increment 1
