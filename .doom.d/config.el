@@ -80,13 +80,13 @@
        ns-right-alternate-modifier 'meta
        ns-use-native-fullscreen t
        scroll-preserve-screen-position nil
-       sh-indent-after-done 2
-       sh-indent-for-do 2
-       sh-indent-for-done 2
-       sh-indent-for-else 2
-       sh-indent-for-fi 2
-       sh-indent-for-then 2
-       sh-indentation 2
+       ;; sh-indent-after-done 2
+       ;; sh-indent-for-do 2
+       ;; sh-indent-for-done 2
+       ;; sh-indent-for-else 2
+       ;; sh-indent-for-fi 2
+       ;; sh-indent-for-then 2
+       ;; sh-indentation 2
        text-scale-mode-step 1)
 
 (custom-set-variables
@@ -208,6 +208,10 @@
 (use-package! recentf
   :config
   (add-to-list 'recentf-exclude "\\.emacs\\.d/\\.local/etc/workspaces/autosave"))
+
+(use-package! shfmt
+  :config
+  (setq! shfmt-arguments '("-i" "2")))
 
 (use-package! treemacs
   :custom-face
