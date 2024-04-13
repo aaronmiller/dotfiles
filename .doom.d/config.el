@@ -69,62 +69,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(toggle-frame-fullscreen)
-
-(setq! frame-title-format "\n"
-       fringe-mode 4
-       mouse-wheel-flip-direction t
-       mouse-wheel-scroll-amount '(1 ((shift) . hscroll))
-       mouse-wheel-scroll-amount-horizontal 1
-       mouse-wheel-tilt-scroll t
-       ns-right-alternate-modifier 'meta
-       ns-use-native-fullscreen t
-       scroll-preserve-screen-position nil
-       sh-indentation 2
-       text-scale-mode-step 1)
-
-(custom-set-variables
- '(warning-suppress-log-types '((transient) (transient) (defvaralias)))
- '(warning-suppress-types '((transient) (defvaralias))))
-
-(custom-set-faces!
-  '(line-number :height 0.8 :weight bold :background nil)
-  '(line-number-current-line :height 0.8 :weight bold :background nil))
-
-(global-set-key (kbd "M-s-;") #'+workspace/switch-right)
-(global-set-key (kbd "M-s-<left>") #'previous-buffer)
-(global-set-key (kbd "M-s-<right>") #'next-buffer)
-(global-set-key (kbd "M-s-l") #'+workspace/switch-left)
-(global-set-key (kbd "s-'") #'+vterm/toggle)
-(global-set-key (kbd "s-0") #'doom/reset-font-size)
-(global-set-key (kbd "s-1") #'+workspace/switch-to-0)
-(global-set-key (kbd "s-2") #'+workspace/switch-to-1)
-(global-set-key (kbd "s-3") #'+workspace/switch-to-2)
-(global-set-key (kbd "s-4") #'+workspace/switch-to-3)
-(global-set-key (kbd "s-5") #'+workspace/switch-to-4)
-(global-set-key (kbd "s-6") #'+workspace/switch-to-5)
-(global-set-key (kbd "s-7") #'+workspace/switch-to-6)
-(global-set-key (kbd "s-8") #'+workspace/switch-to-7)
-(global-set-key (kbd "s-9") #'+workspace/switch-to-final)
-(global-set-key (kbd "s-<down>") #'evil-goto-line)
-(global-set-key (kbd "s-<return>") #'toggle-frame-fullscreen)
-(global-set-key (kbd "s-<up>") #'evil-goto-first-line)
-(global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
-(global-set-key (kbd "s-\\") #'treemacs-select-window)
-(global-set-key (kbd "s-d") #'+evil/window-vsplit-and-follow)
-
-(map! :nvie "s-0" #'doom/reset-font-size
-      :nvie "s-1" #'+workspace/switch-to-0
-      :nvie "s-2" #'+workspace/switch-to-1
-      :nvie "s-3" #'+workspace/switch-to-2
-      :nvie "s-4" #'+workspace/switch-to-3
-      :nvie "s-5" #'+workspace/switch-to-4
-      :nvie "s-6" #'+workspace/switch-to-5
-      :nvie "s-7" #'+workspace/switch-to-6
-      :nvie "s-8" #'+workspace/switch-to-7
-      :nvie "s-9" #'+workspace/switch-to-final
-      :nvie "s-<return>" #'toggle-frame-fullscreen)
-
 (use-package! company
   :config
   (setq! company-idle-delay 0
@@ -165,6 +109,62 @@
   :config
   (setq! doom-themes-enable-italic nil
          doom-themes-padded-modeline t))
+
+(use-package! emacs
+  :config
+  (toggle-frame-fullscreen)
+
+  (setq! frame-title-format "\n"
+         fringe-mode 4
+         mouse-wheel-flip-direction t
+         mouse-wheel-scroll-amount '(1 ((shift) . hscroll))
+         mouse-wheel-scroll-amount-horizontal 1
+         mouse-wheel-tilt-scroll t
+         ns-right-alternate-modifier 'meta
+         ns-use-native-fullscreen t
+         scroll-preserve-screen-position nil
+         sh-indentation 2
+         text-scale-mode-step 1
+         warning-suppress-log-types '((transient) (transient) (defvaralias))
+         warning-suppress-types '((transient) (defvaralias)))
+
+  (custom-set-faces!
+    '(line-number :height 0.8 :weight bold :background nil)
+    '(line-number-current-line :height 0.8 :weight bold :background nil))
+
+  (global-set-key (kbd "M-s-;") #'+workspace/switch-right)
+  (global-set-key (kbd "M-s-<left>") #'previous-buffer)
+  (global-set-key (kbd "M-s-<right>") #'next-buffer)
+  (global-set-key (kbd "M-s-l") #'+workspace/switch-left)
+  (global-set-key (kbd "s-'") #'+vterm/toggle)
+  (global-set-key (kbd "s-0") #'doom/reset-font-size)
+  (global-set-key (kbd "s-1") #'+workspace/switch-to-0)
+  (global-set-key (kbd "s-2") #'+workspace/switch-to-1)
+  (global-set-key (kbd "s-3") #'+workspace/switch-to-2)
+  (global-set-key (kbd "s-4") #'+workspace/switch-to-3)
+  (global-set-key (kbd "s-5") #'+workspace/switch-to-4)
+  (global-set-key (kbd "s-6") #'+workspace/switch-to-5)
+  (global-set-key (kbd "s-7") #'+workspace/switch-to-6)
+  (global-set-key (kbd "s-8") #'+workspace/switch-to-7)
+  (global-set-key (kbd "s-9") #'+workspace/switch-to-final)
+  (global-set-key (kbd "s-<down>") #'evil-goto-line)
+  (global-set-key (kbd "s-<return>") #'toggle-frame-fullscreen)
+  (global-set-key (kbd "s-<up>") #'evil-goto-first-line)
+  (global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
+  (global-set-key (kbd "s-\\") #'treemacs-select-window)
+  (global-set-key (kbd "s-d") #'+evil/window-vsplit-and-follow)
+
+  (map! :nvie "s-0" #'doom/reset-font-size
+        :nvie "s-1" #'+workspace/switch-to-0
+        :nvie "s-2" #'+workspace/switch-to-1
+        :nvie "s-3" #'+workspace/switch-to-2
+        :nvie "s-4" #'+workspace/switch-to-3
+        :nvie "s-5" #'+workspace/switch-to-4
+        :nvie "s-6" #'+workspace/switch-to-5
+        :nvie "s-7" #'+workspace/switch-to-6
+        :nvie "s-8" #'+workspace/switch-to-7
+        :nvie "s-9" #'+workspace/switch-to-final
+        :nvie "s-<return>" #'toggle-frame-fullscreen))
 
 (use-package! evil
   :config
