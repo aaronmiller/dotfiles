@@ -5,12 +5,10 @@
 
 (add-hook 'go-mode-hook
           (lambda ()
-            (add-hook 'before-save-hook #'gofmt-before-save nil t)
             (add-hook 'before-save-hook #'lsp-organize-imports nil t)))
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (add-hook 'before-save-hook #'python-black-buffer nil t)
             (add-hook 'before-save-hook #'py-isort-buffer nil t)))
 
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
