@@ -100,7 +100,6 @@
 (use-package! doom-modeline
   :config
   (setq! doom-modeline-hud t
-         doom-modeline-modal nil
          doom-modeline-vcs-max-length 100)
 
   (line-number-mode -1))
