@@ -78,86 +78,104 @@ key = "Key0"
 mods = "Command"
 action = "ResetFontSize"
 
+# delete line
 [[keyboard.bindings]]
 key = "Back"
 mods = "Command"
 chars = "\u0015"
 
+# delete word
 [[keyboard.bindings]]
 key = "Back"
 mods = "Option"
 chars = "\u001b\u007f"
 
+# go to beginning of line
 [[keyboard.bindings]]
 key = "Left"
 mods = "Command"
 chars = "\u0001"
 
+# go to end of line
 [[keyboard.bindings]]
 key = "Right"
 mods = "Command"
 chars = "\u0005"
 
+# go back one word
 [[keyboard.bindings]]
 key = "Left"
 mods = "Option"
 chars = "\u001bb"
 
+# go forward one word
 [[keyboard.bindings]]
 key = "Right"
 mods = "Option"
 chars = "\u001bf"
 
+# tmux keybindings
+# create new window
 [[keyboard.bindings]]
 key = "T"
 mods = "Command"
 chars = "\u0002c"
 
+# break current tmux pane out of the tmux window
 [[keyboard.bindings]]
 key = "T"
 mods = "Command|Shift"
 chars = "\u0002!"
 
+# delete current window
 [[keyboard.bindings]]
 key = "W"
 mods = "Command"
 chars = "\u0002w"
 
+# split pane vertically
 [[keyboard.bindings]]
 key = "D"
 mods = "Command"
 chars = "\u0002%"
 
+# split pane horizontally
 [[keyboard.bindings]]
 key = "D"
 mods = "Command|Shift"
 chars = "\u0002\""
 
+# go to previous window
 [[keyboard.bindings]]
 key = "Left"
 mods = "Command|Option"
 chars = "\u0002p"
 
+# go to next window
 [[keyboard.bindings]]
 key = "Right"
 mods = "Command|Option"
 chars = "\u0002n"
 
+# list sessions
 [[keyboard.bindings]]
 key = "L"
 mods = "Command"
 chars = "\u0002s"
 
+# swap windows going left
 [[keyboard.bindings]]
 key = "Comma"
 mods = "Command"
 chars = "\u0002,"
 
+# swap windows going right
 [[keyboard.bindings]]
 key = "Period"
 mods = "Command"
 chars = "\u0002."
 
+# cycle panes
 [[keyboard.bindings]]
 key = "LBracket"
 mods = "Command|Option"
@@ -168,6 +186,7 @@ key = "RBracket"
 mods = "Command|Option"
 chars = "\u0002o"
 
+# cycle through windows 1-9
 [[keyboard.bindings]]
 key = "Key1"
 mods = "Command"
