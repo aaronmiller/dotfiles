@@ -72,7 +72,10 @@
 (use-package! company
   :config
   (setq! company-idle-delay 0
-         company-minimum-prefix-length 1))
+         company-minimum-prefix-length 1)
+
+  (with-eval-after-load 'company
+    (define-key company-active-map (kbd "<tab>") nil)))
 
 (use-package! consult
   :custom-face
@@ -103,8 +106,7 @@
          doom-modeline-modal-modern-icon nil
          doom-modeline-vcs-max-length 100)
 
-  (line-number-mode -1)
-  (column-number-mode -1))
+  (line-number-mode -1))
 
 (use-package! doom-themes
   :config
@@ -250,9 +252,6 @@
   :config
   (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
                                  '("~/.doom.d/snippets") nil)))
-
-(with-eval-after-load 'company
-  (define-key company-active-map (kbd "<tab>") nil))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
