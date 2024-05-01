@@ -126,10 +126,6 @@
          warning-suppress-log-types '((transient) (transient) (defvaralias))
          warning-suppress-types '((transient) (defvaralias)))
 
-  (custom-set-faces!
-    '(line-number :height 0.8 :weight bold :background nil)
-    '(line-number-current-line :height 0.8 :weight bold :background nil))
-
   (global-set-key (kbd "M-s-;") #'+workspace/switch-right)
   (global-set-key (kbd "M-s-<left>") #'previous-buffer)
   (global-set-key (kbd "M-s-<right>") #'next-buffer)
@@ -162,7 +158,11 @@
         :nvie "s-7" #'+workspace/switch-to-6
         :nvie "s-8" #'+workspace/switch-to-7
         :nvie "s-9" #'+workspace/switch-to-final
-        :nvie "s-<return>" #'toggle-frame-fullscreen))
+        :nvie "s-<return>" #'toggle-frame-fullscreen)
+
+  :custom-face
+  (line-number ((t (:height 0.8 :weight bold))))
+  (line-number-current-line ((t (:height 0.8 :weight bold)))))
 
 (use-package! evil
   :config
