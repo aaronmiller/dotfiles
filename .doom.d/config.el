@@ -101,7 +101,8 @@
   :config
   (setq! doom-modeline-hud t
          doom-modeline-modal-modern-icon nil
-         doom-modeline-vcs-max-length 100))
+         doom-modeline-vcs-max-length 100)
+  (line-number-mode -1))
 
 (use-package! doom-themes
   :config
