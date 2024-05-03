@@ -15,7 +15,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq! doom-font (font-spec :family "Hack Nerd Font Mono" :size 12)
+(setq! doom-font (font-spec :family "Hack Nerd Font Mono" :size 14)
        doom-symbol-font (font-spec :family "Symbols Nerd Font Mono")
        doom-variable-pitch-font (font-spec :family "Hack Nerd Font Mono"))
 
@@ -218,7 +218,7 @@
   (progn
     (setq! treemacs-fringe-indicator-mode nil
            treemacs-user-mode-line-format 'none
-           treemacs-width 50
+           treemacs-width 45
            treemacs-width-is-initially-locked nil))
 
   ;; HACK: This resets the default theme when treemacs initializes.
