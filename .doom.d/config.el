@@ -239,7 +239,8 @@
 (use-package! vterm
   :config
   (setq! vterm-ignore-blink-cursor nil
-         vterm-max-scrollback 100000)
+         vterm-max-scrollback 100000
+         vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=no")
 
   (map! :map vterm-mode-map
         "M-<left>" (cmd! (vterm-send-key "\x62" nil t))
