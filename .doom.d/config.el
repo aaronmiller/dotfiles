@@ -219,7 +219,7 @@
     (setq! treemacs-fringe-indicator-mode nil
            treemacs-recenter-after-file-follow t
            treemacs-user-mode-line-format 'none
-           treemacs-width 45
+           treemacs-width 50
            treemacs-width-is-initially-locked nil))
 
   ;; HACK: This resets the default theme when treemacs initializes.
