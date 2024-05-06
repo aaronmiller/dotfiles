@@ -237,8 +237,6 @@
                                          (buffer-name (buffer-base-buffer)) " *Treemacs-*"))))
 
 (use-package! vterm
-  :custom
-  (vterm-always-compile-module t)
   :config
   (setq! vterm-max-scrollback 100000)
 
@@ -247,7 +245,10 @@
         "M-<right>" (cmd! (vterm-send-key "\x66" nil t))
         "s-<backspace>" (cmd! (vterm-send-key "\x15"))
         "s-<left>" (cmd! (vterm-send-key "\x61" nil nil t))
-        "s-<right>" (cmd! (vterm-send-key "\x65" nil nil t))))
+        "s-<right>" (cmd! (vterm-send-key "\x65" nil nil t)))
+
+  :custom
+  (vterm-always-compile-module t))
 
 (use-package! yasnippet
   :config
