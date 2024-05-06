@@ -251,7 +251,18 @@
 
   :custom
   (vterm-always-compile-module t)
-  :ensure t)
+  :custom-face
+  (vterm-color-black ((t (:foreground "#1c1f2b" :background "#1c1f2b"))))
+  (vterm-color-red ((t (:foreground "#e1c1ee" :background "#e1c1ee"))))
+  (vterm-color-green ((t (:foreground "#5b94ab" :background "#5b94ab"))))
+  (vterm-color-yellow ((t (:foreground "#cfcf9c" :background "#cfcf9c"))))
+  (vterm-color-blue ((t (:foreground "#819cd6" :background "#819cd6"))))
+  (vterm-color-magenta ((t (:foreground "#a6c1e0" :background "#a6c1e0"))))
+  (vterm-color-cyan ((t (:foreground "#7289bc" :background "#7289bc"))))
+  (vterm-color-white ((t (:foreground "#a6accd" :background "#a6accd"))))
+  :ensure t
+  :hook
+  (vterm-mode . evil-emacs-state))
 
 (use-package! yasnippet
   :config
