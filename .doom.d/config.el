@@ -234,8 +234,9 @@
                 (+treemacs/toggle)))
 
   (after! solaire-mode
-    (setq! solaire-mode-real-buffer-fn (lambda ()
-                                         (buffer-name (buffer-base-buffer)) " *Treemacs-*"))))
+    (setq! solaire-mode-real-buffer-fn
+           (lambda ()
+             (buffer-name (buffer-base-buffer)) " *Treemacs-*"))))
 
 (use-package! vterm
   :config
