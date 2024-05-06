@@ -271,6 +271,9 @@
   (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
                                  '("~/.doom.d/snippets") nil)))
 
+(with-eval-after-load 'lsp-mode
+  (setq! lsp-idle-delay 0.1))
+
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
 
