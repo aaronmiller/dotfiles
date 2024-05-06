@@ -218,6 +218,7 @@
   (progn
     (setq! treemacs-fringe-indicator-mode nil
            treemacs-recenter-after-file-follow t
+           treemacs-space-between-root-nodes nil
            treemacs-user-mode-line-format 'none
            treemacs-width 50
            treemacs-width-is-initially-locked nil))
