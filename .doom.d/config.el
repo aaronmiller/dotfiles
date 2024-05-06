@@ -238,7 +238,8 @@
 
 (use-package! vterm
   :config
-  (setq! vterm-max-scrollback 100000)
+  (setq! vterm-ignore-blink-cursor nil
+         vterm-max-scrollback 100000)
 
   (map! :map vterm-mode-map
         "M-<left>" (cmd! (vterm-send-key "\x62" nil t))
@@ -248,7 +249,8 @@
         "s-<right>" (cmd! (vterm-send-key "\x65" nil nil t)))
 
   :custom
-  (vterm-always-compile-module t))
+  (vterm-always-compile-module t)
+  :ensure t)
 
 (use-package! yasnippet
   :config
