@@ -119,6 +119,7 @@
 
   (setq! frame-title-format "\n"
          fringe-mode 4
+         gc-cons-threshold (* 100 1024 1024)
          mouse-wheel-flip-direction t
          mouse-wheel-scroll-amount '(1 ((shift) . hscroll))
          mouse-wheel-scroll-amount-horizontal 1
