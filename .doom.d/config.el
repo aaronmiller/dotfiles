@@ -260,6 +260,7 @@
                                  '("~/.doom.d/snippets") nil)))
 
 (with-eval-after-load 'lsp-mode
+  (require 'dap-cpptools)
   (setq! lsp-idle-delay 0.1))
 
 ;; Hooks
