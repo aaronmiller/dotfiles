@@ -253,9 +253,7 @@
   (vterm-color-magenta ((t (:foreground "#a6c1e0" :background "#a6c1e0"))))
   (vterm-color-cyan ((t (:foreground "#7289bc" :background "#7289bc"))))
   (vterm-color-white ((t (:foreground "#a6accd" :background "#a6accd"))))
-  :ensure t
-  :hook
-  (vterm-mode . evil-emacs-state))
+  :ensure t)
 
 (use-package! yasnippet
   :config
