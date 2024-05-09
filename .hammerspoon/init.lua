@@ -3,6 +3,6 @@ hs.hotkey.bind({"option"}, "space", function()
   if alacritty:isFrontmost() then
     alacritty:hide()
   else
-    hs.application.launchOrFocus(os.getenv("HOME") .. "/devtools/alacritty/target/release/osx/Alacritty.app")
+    hs.application.launchOrFocus("/Applications/Alacritty.app")
   end
 end)
