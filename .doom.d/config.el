@@ -261,7 +261,9 @@
 
 (with-eval-after-load 'lsp-mode
   (require 'dap-cpptools)
-  (setq! lsp-idle-delay 0.1))
+  (setq! lsp-idle-delay 0.1
+         lsp-modeline-code-actions-enable nil
+         lsp-ui-sideline-show-code-actions t))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
