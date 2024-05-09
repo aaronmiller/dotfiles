@@ -63,5 +63,5 @@
 (package! python-black)
 (package! rego-mode)
 (package! shfmt)
-(package! treemacs-nerd-icons :recipe (:host github :repo "aaronmiller/treemacs-nerd-icons" :branch "amiller"))
+(package! treemacs-nerd-icons :recipe (:host github :repo "aaronmiller/treemacs-nerd-icons"))
 (package! yasnippet-snippets)
