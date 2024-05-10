@@ -14,8 +14,7 @@
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
 (add-hook! 'sh-mode-hook #'shfmt-on-save-mode)
 
-(add-hook! '(conf-mode-hook prog-mode-hook)
-           #'display-fill-column-indicator-mode)
+(add-hook! '(conf-mode-hook prog-mode-hook))
 
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
 (add-hook! 'yaml-mode-hook #'toggle-truncate-lines)
