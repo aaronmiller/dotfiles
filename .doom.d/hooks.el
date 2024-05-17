@@ -34,4 +34,4 @@
 (setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
 
 (setq-hook! 'lsp-mode-hook +lsp-company-backends
-            '(:separate company-yasnippet company-capf))
+            '(:separate company-capf company-yasnippet))
