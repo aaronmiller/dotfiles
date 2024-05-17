@@ -273,9 +273,6 @@
                     :server-id 'clangd-remote))
   )
 
-(after! org
-  (set-company-backend! 'org-mode nil))
-
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
 
