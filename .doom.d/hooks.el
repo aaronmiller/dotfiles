@@ -28,7 +28,6 @@
   #'doom-dashboard-widget-loaded)
 
 (remove-hook! 'doom-modeline-mode-hook
-  #'column-number-mode
   #'size-indication-mode)
 
 (setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
