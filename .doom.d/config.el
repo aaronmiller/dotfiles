@@ -191,6 +191,7 @@
 (use-package! projectile
   :config
   (setq! projectile-auto-discover t
+         projectile-file-exists-remote-cache-expire nil
          projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/") nil)))
 
 (use-package! recentf
@@ -259,19 +260,10 @@
   (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
                                  '("~/.doom.d/snippets") nil)))
 
-(with-eval-after-load 'lsp-mode
-  (require 'dap-cpptools)
-  (setq! lsp-idle-delay 0.1
-         lsp-modeline-code-actions-enable nil
-         lsp-ui-sideline-show-code-actions t))
-
-(with-eval-after-load 'lsp-mode
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-tramp-connection "clangd-12")
-                    :major-modes '(c-mode c++-mode)
-                    :remote? t
-                    :server-id 'clangd-remote))
-  )
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               `((c++-mode c-mode) . ,(eglot-alternatives
+                                       '(("clangd-8"))))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))

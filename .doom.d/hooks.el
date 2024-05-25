@@ -1,10 +1,8 @@
 ;;; $DOOMDIR/hooks.el -*- lexical-binding: t; -*-
 
-(add-hook! 'c-mode-common-hook #'google-set-c-style)
-
-(add-hook 'go-mode-hook
-          (lambda ()
-            (add-hook 'before-save-hook #'lsp-organize-imports nil t)))
+(add-hook! 'c-mode-common-hook (lambda ()
+                                 (eglot-ensure)
+                                 (google-set-c-style)))
 
 (add-hook 'python-mode-hook
           (lambda ()
@@ -31,6 +29,3 @@
   #'size-indication-mode)
 
 (setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
-
-(setq-hook! 'lsp-mode-hook +lsp-company-backends
-            '(:separate company-capf company-yasnippet))
