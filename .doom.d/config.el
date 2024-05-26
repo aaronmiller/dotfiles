@@ -260,11 +260,6 @@
   (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
                                  '("~/.doom.d/snippets") nil)))
 
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               `((c++-mode c-mode) . ,(eglot-alternatives
-                                       '(("clangd-8"))))))
-
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
 
