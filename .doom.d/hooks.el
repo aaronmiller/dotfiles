@@ -2,11 +2,6 @@
 
 (add-hook! 'c-mode-common-hook #'google-set-c-style)
 
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               `((c++-mode c-mode) . ,(eglot-alternatives
-                                       '(("clangd-8"))))))
-
 (add-hook 'python-mode-hook
           (lambda ()
             (add-hook 'before-save-hook #'py-isort-buffer nil t)))
