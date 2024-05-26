@@ -77,20 +77,26 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins+=(
   alias-finder
   aliases
-  brew
   gh
   git
 )
 
-if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
+if [[ $(uname -s) == "Darwin" ]]; then
   plugins+=(
-    emacs
-    last-working-dir
-    tmux
+    brew
   )
+
+  if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
+    plugins+=(
+      emacs
+      last-working-dir
+      tmux
+    )
+  fi
 fi
 
 . "${ZSH}/oh-my-zsh.sh"
@@ -121,6 +127,10 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-. "${DEVTOOLS_DIR}/scripts/index.sh"
+if [[ -d "${HOME}/devtools" ]]; then
+  . "${DEVTOOLS_DIR}/scripts/index.sh"
+fi
 
-typeset -U PATH
+if [[ $(uname -s) == "Darwin" ]]; then
+  typeset -U PATH
+fi
