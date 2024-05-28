@@ -114,7 +114,8 @@
   :config
   (toggle-frame-fullscreen)
 
-  (setq! frame-title-format "\n"
+  (setq! explicit-shell-file-name "/bin/bash"
+         frame-title-format "\n"
          gc-cons-threshold (* 100 1024 1024)
          mouse-wheel-flip-direction t
          mouse-wheel-scroll-amount '(1 ((shift) . hscroll))
