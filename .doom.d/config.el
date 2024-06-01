@@ -182,7 +182,8 @@
                                         ("DONE" . "#afd8af")
                                         ("MAYBE" . "#d0bf8f")
                                         ("KLUDGE" . "#d0bf8f")
-                                        ("TEMP" . "#d0bf8f")) nil)))
+                                        ("TEMP" . "#d0bf8f")
+                                        ("TEST" . "#d0bf8f")) nil)))
 
 (use-package! magit
   :config
