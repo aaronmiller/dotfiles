@@ -66,7 +66,7 @@ determine the exact padding."
    (selection      dark-blue)
    (builtin        teal)
    (comments       dark-cyan)
-   (doc-comments   (doom-lighten dark-cyan 0.25))
+   (doc-comments   dark-cyan)
    (constants      magenta)
    (functions      teal)
    (keywords       blue)

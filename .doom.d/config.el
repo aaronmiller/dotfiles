@@ -164,7 +164,6 @@
         :nvie "s-<return>" #'toggle-frame-fullscreen)
 
   :custom-face
-  (font-lock-doc-face ((t (:foreground "#6e7899"))))
   (line-number ((t (:height 0.8 :weight bold))))
   (line-number-current-line ((t (:height 0.8 :weight bold)))))
 
