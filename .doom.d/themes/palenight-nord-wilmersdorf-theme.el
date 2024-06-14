@@ -28,7 +28,7 @@ determine the exact padding."
 ;;
 ;;; Theme definition
 
-(def-doom-theme palenight-nord-aurora-wilmersdorf
+(def-doom-theme palenight-nord-wilmersdorf
   "A dark theme inspired by Ian Pan's Wilmersdorf"
 
   ;; name        default   256       16
@@ -47,7 +47,7 @@ determine the exact padding."
    (fg         '("#ccdddd" "#c2c2c2" "brightwhite"))
    (fg-alt     '("#9da5B3" "#9a9a9a" "white"))
 
-   ;; nord aurora colors
+   ;; nord colors
    (grey       base4)
    (red        '("#BF616A" "#ff6655" "red"          )) ;; Nord11
    (orange     '("#D08770" "#dd8844" "brightred"    )) ;; Nord12

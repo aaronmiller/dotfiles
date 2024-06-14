@@ -27,7 +27,7 @@ style = "Bold"
 family = "Hack Nerd Font Mono"
 style = "Bold Italic"
 
-# Colors (Palenight + Nord Aurora + Wilmersdorf)
+# Colors (Palenight + Nord + Wilmersdorf)
 [colors]
 [colors.bright]
 black = "#717CB4"
