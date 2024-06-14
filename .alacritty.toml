@@ -55,11 +55,11 @@ yellow = "#EBCB8B"
 
 [colors.primary]
 background = "#292d3e"
-foreground = "#eeffff"
+foreground = "#ccdddd"
 
 [colors.selection]
 background = "#1f2024"
-text = "#eeffff"
+text = "#ccdddd"
 
 [cursor]
 thickness = 0.25
