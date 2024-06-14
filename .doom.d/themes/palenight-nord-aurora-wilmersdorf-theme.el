@@ -44,8 +44,8 @@ determine the exact padding."
    (base6      '("#697098" "#626262" "brightblack"))
    (base7      '("#717CB4" "#767676" "brightblack"))
    (base8      '("#A6Accd" "#a8a8a8" "white"))
-   (fg         '("#eeffff" "#e4e4e4" "brightwhite"))
-   (fg-alt     '("#bfc7D5" "#bcbcbc" "white"))
+   (fg         '("#ccdddd" "#c2c2c2" "brightwhite"))
+   (fg-alt     '("#9da5B3" "#9a9a9a" "white"))
 
    ;; nord aurora colors
    (grey       base4)

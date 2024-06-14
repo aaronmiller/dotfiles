@@ -36,7 +36,7 @@ cyan = "#88C0D0"
 green = "#8FBCBB"
 magenta = "#5D80AE"
 red = "#D08770"
-white = "#d3d3d3"
+white = "#c2c2c2"
 yellow = "#d1dfff"
 
 [colors.cursor]
@@ -50,7 +50,7 @@ cyan = "#507681"
 green = "#A3BE8C"
 magenta = "#B48EAD"
 red = "#BF616A"
-white = "#eeffff"
+white = "#ccdddd"
 yellow = "#EBCB8B"
 
 [colors.primary]

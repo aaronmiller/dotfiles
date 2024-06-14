@@ -255,7 +255,7 @@
   (vterm-color-blue ((t (:foreground "#5E81AC" :background "#5E81AC"))))
   (vterm-color-magenta ((t (:foreground "#B48EAD" :background "#B48EAD"))))
   (vterm-color-cyan ((t (:foreground "#507681" :background "#507681"))))
-  (vterm-color-white ((t (:foreground "#eeffff" :background "#eeffff")))))
+  (vterm-color-white ((t (:foreground "#ccdddd" :background "#ccdddd")))))
 
 (use-package! yasnippet
   :config
