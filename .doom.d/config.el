@@ -249,13 +249,13 @@
   (vterm-always-compile-module t)
   :custom-face
   (vterm-color-black ((t (:foreground "#1c1f2b" :background "#1c1f2b"))))
-  (vterm-color-red ((t (:foreground "#e1c1ee" :background "#e1c1ee"))))
-  (vterm-color-green ((t (:foreground "#5b94ab" :background "#5b94ab"))))
-  (vterm-color-yellow ((t (:foreground "#cfcf9c" :background "#cfcf9c"))))
-  (vterm-color-blue ((t (:foreground "#819cd6" :background "#819cd6"))))
-  (vterm-color-magenta ((t (:foreground "#a6c1e0" :background "#a6c1e0"))))
-  (vterm-color-cyan ((t (:foreground "#7289bc" :background "#7289bc"))))
-  (vterm-color-white ((t (:foreground "#a6accd" :background "#a6accd")))))
+  (vterm-color-red ((t (:foreground "#BF616A" :background "#BF616A"))))
+  (vterm-color-green ((t (:foreground "#A3BE8C" :background "#A3BE8C"))))
+  (vterm-color-yellow ((t (:foreground "#EBCB8B" :background "#EBCB8B"))))
+  (vterm-color-blue ((t (:foreground "#5E81AC" :background "#5E81AC"))))
+  (vterm-color-magenta ((t (:foreground "#B48EAD" :background "#B48EAD"))))
+  (vterm-color-cyan ((t (:foreground "#507681" :background "#507681"))))
+  (vterm-color-white ((t (:foreground "#eeffff" :background "#eeffff")))))
 
 (use-package! yasnippet
   :config
