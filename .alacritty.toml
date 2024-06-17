@@ -27,16 +27,16 @@ style = "Bold"
 family = "Hack Nerd Font Mono"
 style = "Bold Italic"
 
-# Colors (Palenight + Nord + Wilmersdorf)
+# Colors (Palenight + Wilmersdorf)
 [colors]
 [colors.bright]
 black = "#717CB4"
-blue = "#81A1C1"
-cyan = "#88C0D0"
-green = "#8FBCBB"
-magenta = "#5D80AE"
-red = "#D08770"
-white = "#c2c2c2"
+blue = "#90a6db"
+cyan = "#7289bc"
+green = "#7ebebd"
+magenta = "#b0a2e7"
+red = "#a6c1e0"
+white = "#ccdddd"
 yellow = "#d1dfff"
 
 [colors.cursor]
@@ -45,13 +45,13 @@ text = "#1f2024"
 
 [colors.normal]
 black = "#1c1f2b"
-blue = "#5E81AC"
-cyan = "#507681"
-green = "#A3BE8C"
-magenta = "#B48EAD"
-red = "#BF616A"
+blue = "#819cd6"
+cyan = "#6e7899"
+green = "#5b94ab"
+magenta = "#a6c1e0"
+red = "#e1c1ee"
 white = "#ccdddd"
-yellow = "#EBCB8B"
+yellow = "#cfcf9c"
 
 [colors.primary]
 background = "#292d3e"

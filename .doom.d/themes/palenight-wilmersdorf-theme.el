@@ -28,47 +28,45 @@ determine the exact padding."
 ;;
 ;;; Theme definition
 
-(def-doom-theme palenight-nord-wilmersdorf
+(def-doom-theme palenight-wilmersdorf
   "A dark theme inspired by Ian Pan's Wilmersdorf"
 
   ;; name        default   256       16
-  ;; palenight base
   ((bg         '("#292d3e" nil       nil))
    (bg-alt     '("#242837" nil       nil))
    (base0      '("#1c1f2b" "black"   "black"))
    (base1      '("#1e212e" "#262626" "brightblack"))
    (base2      '("#232635" "#303030" "brightblack"))
-   (base3      '("#3C435E" "#3a3a3a" "brightblack"))
-   (base4      '("#4E5579" "#444444" "brightblack"))
-   (base5      '("#676E95" "#585858" "brightblack"))
+   (base3      '("#3c435e" "#3a3a3a" "brightblack"))
+   (base4      '("#4e5579" "#444444" "brightblack"))
+   (base5      '("#676e95" "#585858" "brightblack"))
    (base6      '("#697098" "#626262" "brightblack"))
-   (base7      '("#717CB4" "#767676" "brightblack"))
-   (base8      '("#A6Accd" "#a8a8a8" "white"))
+   (base7      '("#717cb4" "#767676" "brightblack"))
+   (base8      '("#a6accd" "#a8a8a8" "white"))
    (fg         '("#ccdddd" "#c2c2c2" "brightwhite"))
    (fg-alt     '("#9da5B3" "#9a9a9a" "white"))
 
-   ;; nord colors
    (grey       base4)
-   (red        '("#BF616A" "#ff6655" "red"          )) ;; Nord11
-   (orange     '("#D08770" "#dd8844" "brightred"    )) ;; Nord12
-   (green      '("#A3BE8C" "#99bb66" "green"        )) ;; Nord14
-   (teal       '("#8FBCBB" "#44b9b1" "brightgreen"  )) ;; Nord7
-   (yellow     '("#EBCB8B" "#ECBE7B" "yellow"       )) ;; Nord13
-   (blue       '("#81A1C1" "#51afef" "brightblue"   )) ;; Nord9
-   (dark-blue  '("#5E81AC" "#2257A0" "blue"         )) ;; Nord10
-   (magenta    '("#B48EAD" "#c678dd" "magenta"      )) ;; Nord15
-   (violet     '("#5D80AE" "#a9a1e1" "brightmagenta")) ;; ??
-   (cyan       '("#88C0D0" "#46D9FF" "brightcyan"   )) ;; Nord8
-   (dark-cyan  '("#507681" "#5699AF" "cyan"         )) ;; ??
+   (red        '("#e1c1ee" "#e1c1ee" "red"          ))
+   (orange     '("#a6c1e0" "#a6c1e0" "brightred"    ))
+   (green      '("#5b94ab" "#5b94ab" "green"        ))
+   (teal       '("#7ebebd" "#7ebebd" "brightgreen"  ))
+   (yellow     '("#cfcf9c" "#cfcf9c" "yellow"       ))
+   (blue       '("#819cd6" "#819cd6" "brightblue"   ))
+   (light-blue '("#90a6db" "#90a6db" "yellow"       ))
+   (dark-blue  '("#616c96" "#616c96" "blue"         ))
+   (magenta    '("#a6c1e0" "#a6c1e0" "magenta"      ))
+   (violet     '("#b0a2e7" "#b0a2e7" "brightmagenta"))
+   (cyan       '("#7289bc" "#7289bc" "brightcyan"   ))
+   (dark-cyan  '("#6e7899" "#6e7899" "cyan"   ))
 
    ;; face categories -- required for all themes
-   ;; the rest is wilmersdorf
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        teal)
    (comments       dark-cyan)
-   (doc-comments   (doom-lighten dark-cyan 0.25))
+   (doc-comments   dark-cyan)
    (constants      magenta)
    (functions      teal)
    (keywords       blue)
