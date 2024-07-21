@@ -12,19 +12,19 @@ history = 100000
 [font]
 size = 12
 [font.normal]
-family = "Source Code Pro"
+family = "Hack"
 style = "Regular"
 
 [font.italic]
-family = "Source Code Pro"
+family = "Hack"
 style = "Italic"
 
 [font.bold]
-family = "Source Code Pro"
+family = "Hack"
 style = "Bold"
 
 [font.bold_italic]
-family = "Source Code Pro"
+family = "Hack"
 style = "Bold Italic"
 
 # Colors (Palenight + Wilmersdorf)
