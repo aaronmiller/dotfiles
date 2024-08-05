@@ -104,12 +104,6 @@
   (setq! doom-themes-enable-italic nil
          doom-themes-padded-modeline t))
 
-(use-package! eglot
-  :config
-  (add-to-list 'eglot-server-programs
-               `((c++-mode c-mode) . ,(eglot-alternatives
-                                       '(("clangd-8"))))))
-
 (use-package! emacs
   :config
   (toggle-frame-fullscreen)
