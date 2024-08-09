@@ -12,19 +12,19 @@ history = 100000
 [font]
 size = 12
 [font.normal]
-family = "Hack"
+family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [font.italic]
-family = "Hack"
+family = "Hack Nerd Font Mono"
 style = "Italic"
 
 [font.bold]
-family = "Hack"
+family = "Hack Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack"
+family = "Hack Nerd Font Mono"
 style = "Bold Italic"
 
 # Colors (Palenight + Wilmersdorf)
