@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+# This hook is sourced after every virtualenv is activated
+
+while read -r line; do pip install "${line}"; done <"${HOME}/.default-python-packages"
