@@ -153,11 +153,6 @@
   :custom
   (vterm-always-compile-module t))
 
-(use-package! yasnippet
-  :config
-  (setq! yas-snippet-dirs (apply 'append yas-snippet-dirs nil
-                                 '("~/.doom.d/snippets") nil)))
-
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
 
