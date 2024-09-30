@@ -120,8 +120,7 @@
   :defer t
   :config
   (progn
-    (setq! treemacs-fringe-indicator-mode nil
-           treemacs-git-mode -1
+    (setq! treemacs-git-mode -1
            treemacs-recenter-after-file-follow t
            treemacs-space-between-root-nodes nil
            treemacs-user-mode-line-format 'none
