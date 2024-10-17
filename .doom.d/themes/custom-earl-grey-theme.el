@@ -244,16 +244,15 @@ determine the exact padding."
 
    ;; Font-Lock
    (font-lock-comment-face
-    :foreground comments
-    :inherit 'italic)
+    :foreground comments)
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
     (font-lock-comment-delimiter-face    :inherit font-lock-comment-face)
     (font-lock-builtin-face              :foreground fg
-                                         :inherit 'italic :extend t)
+                                         :extend t)
     (font-lock-type-face                 :foreground fg
-                                         :inherit 'italic :extend t)
+                                         :extend t)
     (font-lock-variable-name-face        :foreground blue)
     (font-lock-warning-face              :foreground red)
     (font-lock-negation-char-face        :foreground orange
@@ -267,7 +266,7 @@ determine the exact padding."
     (font-lock-regexp-grouping-construct :inherit 'default)
     (font-lock-constant-face             :foreground teal)
     (font-lock-function-name-face        :foreground fg
-                                         :inherit 'italic :extend t)
+                                         :extend t)
 
     ;; makefile-*-mode
     (makefile-targets :foreground magenta)
@@ -290,8 +289,7 @@ determine the exact padding."
     (web-mode-html-tag-face          :foreground magenta)
     (web-mode-html-attr-name-face    :foreground blue)
     (web-mode-html-attr-value-face   :inherit 'font-lock-string-face)
-    (web-mode-html-entity-face       :foreground orange
-                                     :inherit 'italic)
+    (web-mode-html-entity-face       :foreground orange)
     (web-mode-block-control-face     :foreground magenta)
     (web-mode-html-tag-bracket-face  :foreground fg-alt)
     (web-mode-symbol-face            :foreground blue)
@@ -488,8 +486,7 @@ determine the exact padding."
     :background eg-blue1)
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
-   (css-property             :foreground blue
-                             :inherit 'italic)
+   (css-property             :foreground blue)
    (css-proprietary-property :foreground orange)
    (css-selector             :foreground magenta)
    (web-mode-css-property-name-face :foreground fg)
@@ -503,14 +500,12 @@ determine the exact padding."
                                    :inherit 'bold)
    (markdown-link-face             :foreground teal)
    (markdown-url-face              :foreground blue)
-   (markdown-italic-face           :inherit 'italic
-                                   :foreground fg)
+   (markdown-italic-face           :foreground fg)
    (markdown-bold-face             :inherit 'bold
                                    :foreground fg)
    (markdown-markup-face           :foreground fg
                                    :inherit 'bold)
-   (markdown-blockquote-face       :inherit 'italic
-                                   :foreground orange)
+   (markdown-blockquote-face       :foreground orange)
    (markdown-pre-face              :foreground orange
                                    :extend t)
    (markdown-code-face             :foreground orange
@@ -556,7 +551,7 @@ determine the exact padding."
 
    ;; js2-mode
    (js2-function-param    :foreground blue)
-   (js2-function-call     :foreground fg :inherit 'italic)
+   (js2-function-call     :foreground fg)
    (js2-object-property   :foreground fg)
    (js2-jsdoc-tag         :foreground doc-comments)
    (js2-external-variable :foreground fg)
