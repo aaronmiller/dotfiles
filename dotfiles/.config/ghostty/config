@@ -1,0 +1,85 @@
+# --- Window & Scrolling ---
+fullscreen = true
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+background-opacity = 1
+background-blur-radius = 0
+scrollback-limit = 10000
+scrollbar = never
+resize-overlay = never
+quit-after-last-window-closed = true
+
+# --- Font & Cursor ---
+font-family = Hack
+font-size = 12
+
+cursor-style = bar
+cursor-style-blink = false
+cursor-color = #6b9fe0
+adjust-cursor-thickness = 3
+
+# --- Colors ---
+background = #0b2641
+foreground = #b2d6ff
+selection-background = #4b6fa0
+selection-foreground = #b2d6ff
+
+# Normal colors (0-7)
+palette = 0=#001d34
+palette = 1=#cbc4f8
+palette = 2=#4597b5
+palette = 3=#b9d2a6
+palette = 4=#6b9fe0
+palette = 5=#90c4ea
+palette = 6=#5c8cc6
+palette = 7=#9ec5fa
+
+# Bright colors (8-15, mapped to normal colors to match Alacritty fallback behavior)
+palette = 8=#666666
+palette = 9=#cbc4f8
+palette = 10=#4597b5
+palette = 11=#b9d2a6
+palette = 12=#6b9fe0
+palette = 13=#90c4ea
+palette = 14=#5c8cc6
+palette = 15=#9ec5fa
+
+# --- General Keybindings ---
+keybind = super+enter=toggle_fullscreen
+keybind = super+0=reset_font_size
+keybind = global:alt+space=toggle_visibility
+
+# Line & Word Editing / Navigation
+keybind = super+backspace=text:\x15
+keybind = alt+backspace=text:\x1b\x7f
+keybind = super+left=text:\x01
+keybind = super+right=text:\x05
+keybind = alt+left=text:\x1bb
+keybind = alt+right=text:\x1bf
+
+# --- Tmux Keybindings ---
+# Prefix: Ctrl+B (\x02)
+keybind = super+t=text:\x02c
+keybind = super+shift+t=text:\x02!
+keybind = super+w=text:\x02w
+keybind = super+d=text:\x02"
+keybind = super+shift+d=text:\x02%
+keybind = super+alt+left=text:\x02p
+keybind = super+alt+right=text:\x02n
+keybind = super+l=text:\x02s
+keybind = super+,=text:\x02,
+keybind = super+.=text:\x02.
+keybind = super+alt+[=text:\x02O
+keybind = super+alt+]=text:\x02o
+
+# Window switching 1-9
+keybind = super+1=text:\x021
+keybind = super+2=text:\x022
+keybind = super+3=text:\x023
+keybind = super+4=text:\x024
+keybind = super+5=text:\x025
+keybind = super+6=text:\x026
+keybind = super+7=text:\x027
+keybind = super+8=text:\x028
+keybind = super+9=text:\x029
