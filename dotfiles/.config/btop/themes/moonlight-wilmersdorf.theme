@@ -1,0 +1,65 @@
+# Moonlight-Wilmersdorf btop theme
+
+# Main background (#0b2641) and foreground (#b2d6ff)
+theme[main_bg]="#0b2641"
+theme[main_fg]="#b2d6ff"
+
+# Title color for boxes (Using 'teal' #68c1c7)
+theme[title]="#68c1c7"
+
+# Highlight color for keyboard shortcuts (Using 'blue' #6b9fe0)
+theme[hi_fg]="#6b9fe0"
+
+# Background/Foreground of selected item in processes (Using 'dark-blue' #4b6fa0 and 'fg-alt')
+theme[selected_bg]="#4b6fa0"
+theme[selected_fg]="#9ec5fa"
+
+# Color of inactive/disabled text (Using 'base4' #193657)
+theme[inactive_fg]="#193657"
+
+# Misc colors for processes (Using 'indigo' #648bd9)
+theme[proc_misc]="#648bd9"
+
+# Box outline and divider colors (Using 'base3' #0c2740)
+theme[cpu_box]="#0c2740"
+theme[mem_box]="#0c2740"
+theme[net_box]="#0c2740"
+theme[proc_box]="#0c2740"
+theme[div_line]="#0c2740"
+
+# Temperature graph (Green -> Yellow -> Red)
+theme[temp_start]="#4597b5"
+theme[temp_mid]="#b9d2a6"
+theme[temp_end]="#cbc4f8"
+
+# CPU graph colors (Using your Moonlight Blues: Blue -> Light Blue -> Cyan)
+theme[cpu_start]="#6b9fe0"
+theme[cpu_mid]="#7aa9e5"
+theme[cpu_end]="#5c8cc6"
+
+# Mem/Disk meters (Using Teal and Indigo gradients)
+theme[free_start]="#68c1c7"
+theme[free_mid]="#648bd9"
+theme[free_end]="#9aa5f1"
+
+theme[cached_start]="#4b6fa0"
+theme[cached_mid]="#648bd9"
+theme[cached_end]="#7aa9e5"
+
+theme[available_start]="#68c1c7"
+theme[available_mid]="#648bd9"
+theme[available_end]="#9aa5f1"
+
+theme[used_start]="#4b6fa0"
+theme[used_mid]="#648bd9"
+theme[used_end]="#7aa9e5"
+
+# Download graph (Green #4597b5)
+theme[download_start]="#031d34"
+theme[download_mid]="#587ba3"
+theme[download_end]="#4597b5"
+
+# Upload graph (Magenta/Violet #90c4ea / #9aa5f1)
+theme[upload_start]="#031d34"
+theme[upload_mid]="#90c4ea"
+theme[upload_end]="#9aa5f1"
