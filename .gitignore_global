@@ -1,0 +1,6 @@
+# macos data files
+.DS_Store
+
+# c/c++ compilation database
+compile_commands.json
+compile_flags.txt

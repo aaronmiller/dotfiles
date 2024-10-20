@@ -1,0 +1,223 @@
+[window]
+dynamic_padding = true
+startup_mode = "Fullscreen"
+
+[window.padding]
+x = 4
+y = 4
+
+[scrolling]
+history = 100000
+
+[font]
+size = 12
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
+
+# Colors (Moonlight + Wilmersdorf)
+[colors]
+[colors.primary]
+background = "#2b2d41"
+foreground = "#d2ddff"
+
+[colors.normal]
+black = "#202434"
+blue = "#8ba6e0"
+cyan = "#7c93c6"
+green = "#659eb5"
+magenta = "#b0cbea"
+red = "#ebcbf8"
+white = "#beccfa"
+yellow = "#d9d9a6"
+
+[colors.selection]
+background = "#424866"
+text = "#d2ddff"
+
+[colors.cursor]
+cursor = "#8ba6e0"
+text = "#292a2e"
+
+[cursor]
+thickness = 0.25
+unfocused_hollow = false
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Command"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Command"
+action = "ResetFontSize"
+
+# delete line
+[[keyboard.bindings]]
+key = "Back"
+mods = "Command"
+chars = "\u0015"
+
+# delete word
+[[keyboard.bindings]]
+key = "Back"
+mods = "Option"
+chars = "\u001b\u007f"
+
+# go to beginning of line
+[[keyboard.bindings]]
+key = "Left"
+mods = "Command"
+chars = "\u0001"
+
+# go to end of line
+[[keyboard.bindings]]
+key = "Right"
+mods = "Command"
+chars = "\u0005"
+
+# go back one word
+[[keyboard.bindings]]
+key = "Left"
+mods = "Option"
+chars = "\u001bb"
+
+# go forward one word
+[[keyboard.bindings]]
+key = "Right"
+mods = "Option"
+chars = "\u001bf"
+
+# tmux keybindings
+# create new window
+[[keyboard.bindings]]
+key = "T"
+mods = "Command"
+chars = "\u0002c"
+
+# break current tmux pane out of the tmux window
+[[keyboard.bindings]]
+key = "T"
+mods = "Command|Shift"
+chars = "\u0002!"
+
+# delete current window
+[[keyboard.bindings]]
+key = "W"
+mods = "Command"
+chars = "\u0002w"
+
+# split pane vertically
+[[keyboard.bindings]]
+key = "D"
+mods = "Command"
+chars = "\u0002%"
+
+# split pane horizontally
+[[keyboard.bindings]]
+key = "D"
+mods = "Command|Shift"
+chars = "\u0002\""
+
+# go to previous window
+[[keyboard.bindings]]
+key = "Left"
+mods = "Command|Option"
+chars = "\u0002p"
+
+# go to next window
+[[keyboard.bindings]]
+key = "Right"
+mods = "Command|Option"
+chars = "\u0002n"
+
+# list sessions
+[[keyboard.bindings]]
+key = "L"
+mods = "Command"
+chars = "\u0002s"
+
+# swap windows going left
+[[keyboard.bindings]]
+key = "Comma"
+mods = "Command"
+chars = "\u0002,"
+
+# swap windows going right
+[[keyboard.bindings]]
+key = "Period"
+mods = "Command"
+chars = "\u0002."
+
+# cycle panes
+[[keyboard.bindings]]
+key = "LBracket"
+mods = "Command|Option"
+chars = "\u0002O"
+
+[[keyboard.bindings]]
+key = "RBracket"
+mods = "Command|Option"
+chars = "\u0002o"
+
+# cycle through windows 1-9
+[[keyboard.bindings]]
+key = "Key1"
+mods = "Command"
+chars = "\u00021"
+
+[[keyboard.bindings]]
+key = "Key2"
+mods = "Command"
+chars = "\u00022"
+
+[[keyboard.bindings]]
+key = "Key3"
+mods = "Command"
+chars = "\u00023"
+
+[[keyboard.bindings]]
+key = "Key4"
+mods = "Command"
+chars = "\u00024"
+
+[[keyboard.bindings]]
+key = "Key5"
+mods = "Command"
+chars = "\u00025"
+
+[[keyboard.bindings]]
+key = "Key6"
+mods = "Command"
+chars = "\u00026"
+
+[[keyboard.bindings]]
+key = "Key7"
+mods = "Command"
+chars = "\u00027"
+
+[[keyboard.bindings]]
+key = "Key8"
+mods = "Command"
+chars = "\u00028"
+
+[[keyboard.bindings]]
+key = "Key9"
+mods = "Command"
+chars = "\u00029"
