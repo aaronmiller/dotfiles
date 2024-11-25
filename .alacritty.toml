@@ -10,7 +10,7 @@ y = 4
 history = 100000
 
 [font]
-size = 12
+size = 14
 [font.normal]
 family = "Hack Nerd Font Mono"
 style = "Regular"
@@ -30,26 +30,26 @@ style = "Bold Italic"
 # Colors (Moonlight + Wilmersdorf)
 [colors]
 [colors.primary]
-background = "#2b2d41"
-foreground = "#d2ddff"
+background = "#1b3d41"
+foreground = "#c2edff"
 
 [colors.normal]
-black = "#202434"
-blue = "#8ba6e0"
-cyan = "#7c93c6"
-green = "#659eb5"
-magenta = "#b0cbea"
-red = "#ebcbf8"
-white = "#beccfa"
-yellow = "#d9d9a6"
+black = "#103434"
+blue = "#7bb6e0"
+cyan = "#6ca3c6"
+green = "#55aeb5"
+magenta = "#a0dbea"
+red = "#dbdbf8"
+white = "#aedcfa"
+yellow = "#c9e9a6"
 
 [colors.selection]
-background = "#424866"
-text = "#d2ddff"
+background = "#325866"
+text = "#c2edff"
 
 [colors.cursor]
-cursor = "#8ba6e0"
-text = "#292a2e"
+cursor = "#7bb6e0"
+text = "#193a2e"
 
 [cursor]
 thickness = 0.25
