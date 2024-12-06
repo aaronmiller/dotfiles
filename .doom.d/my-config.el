@@ -130,6 +130,7 @@
   ;; HACK: This resets the default theme when treemacs initializes.
   (treemacs-create-theme "Default")
   (treemacs-load-theme "simple")
+
   (treemacs-follow-mode t)
 
   (map! :map treemacs-mode-map
