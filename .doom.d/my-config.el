@@ -90,11 +90,6 @@
   (setq! evil-emacs-state-cursor '(bar)
          evil-escape-key-sequence nil))
 
-(use-package! hl-todo
-  :config
-  (setq! hl-todo-keyword-faces (apply 'append hl-todo-keyword-faces nil
-                                      '(("TEST" . "#d0bf8f")) nil)))
-
 (use-package! magit
   :config
   (setq! magit-log-section-commit-count 25
