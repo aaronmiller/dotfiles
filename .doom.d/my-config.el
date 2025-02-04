@@ -92,7 +92,8 @@
 
 (use-package! magit
   :config
-  (setq! magit-log-section-commit-count 25
+  (setq! magit-git-executable "/Applications/Xcode.app/Contents/Developer/usr/bin/git"
+         magit-log-section-commit-count 25
          magit-todos-insert-after '(bottom)))
 
 (use-package! projectile
