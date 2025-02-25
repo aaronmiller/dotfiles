@@ -165,6 +165,10 @@
   :custom
   (vterm-always-compile-module t))
 
+(use-package! writeroom-mode
+  :config
+  (setq! writeroom-width 120))
+
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
 
