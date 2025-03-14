@@ -10,7 +10,7 @@ y = 4
 history = 100000
 
 [font]
-size = 12
+size = 14
 [font.normal]
 family = "Hack Nerd Font Mono"
 style = "Regular"
