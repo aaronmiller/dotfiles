@@ -31,8 +31,6 @@
 
 (use-package! emacs
   :config
-  (toggle-frame-fullscreen)
-
   (setq! explicit-shell-file-name "/bin/bash"
          frame-title-format "\n"
          gc-cons-threshold (* 100 1024 1024)
