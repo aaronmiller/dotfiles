@@ -1,10 +1,5 @@
 ;;; $DOOMDIR/my-config.el -*- lexical-binding: t; -*-
 
-(use-package! consult
-  :custom-face
-  (consult-line-number ((t (:height 0.8 :weight bold))))
-  (consult-line-number-wrapped ((t (:height 0.8 :weight bold)))))
-
 (use-package! corfu
   :init
   (global-corfu-mode))
@@ -88,11 +83,7 @@
   ;; Hide commands in M-x which do not apply to the current mode.  Corfu
   ;; commands are hidden, since they are not used via M-x. This setting is
   ;; useful beyond Corfu.
-  (read-extended-command-predicate #'command-completion-default-include-p)
-
-  :custom-face
-  (line-number ((t (:height 0.8 :weight bold))))
-  (line-number-current-line ((t (:height 0.8 :weight bold)))))
+  (read-extended-command-predicate #'command-completion-default-include-p))
 
 (use-package! eglot
   :config
@@ -124,8 +115,6 @@
   (setq! shfmt-arguments '("-i" "2")))
 
 (use-package! treemacs
-  :custom-face
-  (treemacs-root-face ((t (:height 1.0))))
   :defer t
   :config
   (progn
@@ -166,6 +155,14 @@
 (use-package! writeroom-mode
   :config
   (setq! writeroom-width 120))
+
+(custom-set-faces
+ '(consult-line-number ((t (:height 0.8 :weight bold))))
+ '(consult-line-number-wrapped ((t (:height 0.8 :weight bold))))
+ '(line-number ((t (:height 0.8 :weight bold))))
+ '(line-number-current-line ((t (:height 0.8 :weight bold))))
+ '(treemacs-root-face ((t (:height 1.0))))
+ )
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
