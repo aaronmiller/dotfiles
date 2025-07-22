@@ -30,26 +30,26 @@ style = "Bold Italic"
 # Colors (Moonlight + Wilmersdorf)
 [colors]
 [colors.primary]
-background = "#0b2b41"
-foreground = "#b2dbff"
+background = "#0b2f41"
+foreground = "#b2dfff"
 
 [colors.normal]
-black = "#002234"
-blue = "#6ba4e0"
-cyan = "#5c91c6"
-green = "#459cb5"
-magenta = "#90c9ea"
-red = "#cbc9f8"
-white = "#9ecafa"
-yellow = "#b9d7a6"
+black = "#002634"
+blue = "#6ba8e0"
+cyan = "#5c95c6"
+green = "#45a0b5"
+magenta = "#90cdea"
+red = "#cbcdf8"
+white = "#9ecefa"
+yellow = "#b9dba6"
 
 [colors.selection]
-background = "#224666"
-text = "#b2dbff"
+background = "#224a66"
+text = "#b2dfff"
 
 [colors.cursor]
-cursor = "#6ba4e0"
-text = "#09282e"
+cursor = "#6ba8e0"
+text = "#092c2e"
 
 [cursor]
 thickness = 0.25
