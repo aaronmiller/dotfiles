@@ -5,3 +5,4 @@ nodejs 22.13.1
 python 2.7.18 3.13.1
 ruby 3.4.1
 rust 1.84.1
+pipenv 2025.0.4
