@@ -93,7 +93,6 @@ if [[ $(uname -s) == "Darwin" ]]; then
   if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
     plugins+=(
       emacs
-      last-working-dir
       tmux
     )
   fi
