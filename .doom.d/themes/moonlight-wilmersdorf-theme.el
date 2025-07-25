@@ -31,6 +31,7 @@ determine the exact padding."
 (def-doom-theme moonlight-wilmersdorf
   "A dark theme inspired by Ian Pan's Wilmersdorf"
 
+  ;; default bg #212337
   ;; name        default   256       16
   ((bg         '("#0b2d41" "#0b2d41" "black"))
    (bg-alt     '("#032434" "#032434" "black"))
