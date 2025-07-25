@@ -34,6 +34,8 @@ background = "#0b2d41"
 foreground = "#b2ddff"
 
 [colors.normal]
+black = "#002434"
+white = "#9eccfa"
 red = "#cbcbf8"
 green = "#459eb5"
 yellow = "#b9d9a6"
