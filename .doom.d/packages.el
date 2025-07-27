@@ -62,4 +62,5 @@
 (package! rego-mode)
 (package! shfmt)
 (package! treemacs-nerd-icons :recipe (:host github :repo "aaronmiller/treemacs-nerd-icons"))
+(package! xenops)
 (package! yasnippet-snippets)
