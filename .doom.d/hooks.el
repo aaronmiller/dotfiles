@@ -6,6 +6,7 @@
   (hide-mode-line-mode)
   (hl-line-mode -1))
 
+(add-hook! 'LaTeX-mode-hook #'xenops-mode)
 (add-hook! 'c-mode-common-hook #'google-set-c-style)
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
