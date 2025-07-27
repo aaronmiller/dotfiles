@@ -26,7 +26,8 @@
 
 (use-package! emacs
   :config
-  (setq! explicit-shell-file-name "/bin/bash"
+  (setq! +latex-viewers '(pdf-tools)
+         explicit-shell-file-name "/bin/bash"
          frame-title-format "\n"
          gc-cons-threshold (* 100 1024 1024)
          mouse-wheel-flip-direction t
