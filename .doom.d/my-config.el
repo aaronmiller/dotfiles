@@ -88,7 +88,12 @@
 
 (use-package! eglot
   :config
-  (setq! eglot-connect-timeout nil))
+  (setq! eglot-connect-timeout nil)
+
+  ;; latex
+  (add-to-list 'eglot-server-programs
+               `((latex-mode plain-tex-mode context-mode texinfo-mode bibtex-mode tex-mode)
+                 . ,(eglot-alternatives '("texlab")))))
 
 (use-package! evil
   :config
