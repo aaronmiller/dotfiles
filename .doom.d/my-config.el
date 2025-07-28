@@ -167,8 +167,7 @@
  '(consult-line-number-wrapped ((t (:height 0.8 :weight bold))))
  '(line-number ((t (:height 0.8 :weight bold))))
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
- '(treemacs-root-face ((t (:height 1.0))))
- )
+ '(treemacs-root-face ((t (:height 1.0)))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
