@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: joyner
-# key: joyner
+# name: joyner document format
+# key: jdf
 # --
 
 \documentclass[11pt]{article}
