@@ -1,9 +1,5 @@
 ;;; $DOOMDIR/my-config.el -*- lexical-binding: t; -*-
 
-(use-package! corfu
-  :init
-  (global-corfu-mode))
-
 (use-package! deft
   :config
   (setq! deft-new-file-format "%Y-%m-%d"))
@@ -73,18 +69,7 @@
         :nvie "s-7" #'+workspace/switch-to-6
         :nvie "s-8" #'+workspace/switch-to-7
         :nvie "s-9" #'+workspace/switch-to-final
-        :nvie "s-<return>" #'toggle-frame-fullscreen)
-
-  :custom
-  ;; corfu
-  ;; Enable indentation+completion using the TAB key.
-  ;; `completion-at-point' is often bound to M-TAB.
-  (tab-always-indent 'complete)
-
-  ;; Hide commands in M-x which do not apply to the current mode.  Corfu
-  ;; commands are hidden, since they are not used via M-x. This setting is
-  ;; useful beyond Corfu.
-  (read-extended-command-predicate #'command-completion-default-include-p))
+        :nvie "s-<return>" #'toggle-frame-fullscreen))
 
 (use-package! eglot
   :config
