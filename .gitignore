@@ -1,4 +1,1 @@
-.tmux/plugins/**
-!.tmux/plugins/tpm
-
 .doom.d/flycheck_config.el
