@@ -1,4 +1,4 @@
-black
+black; python_version > '2.7'
 isort
 pyright
 virtualenvwrapper
