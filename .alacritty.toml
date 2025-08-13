@@ -29,24 +29,24 @@ style = "Bold Italic"
 
 [colors]
 [colors.primary]
-background = "#212337"
-foreground = "#c8d3f5"
+background = "#FCFBF9"
+foreground = "#605A52"
 
 [colors.normal]
-black = "#161a2a"
-white = "#b4c2f0"
-red = "#e1c1ee"
-green = "#5b94ab"
-yellow = "#cfcf9c"
-blue = "#819cd6"
-magenta = "#a6c1e0"
-cyan = "#7289bc"
+black = "#DDDBD8"
+white = "#7F7A73"
+red = "#8F5652"
+green = "#747B4D"
+yellow = "#886A44"
+blue = "#556995"
+magenta = "#83577D"
+cyan = "#477A7B"
 
 [colors.selection]
-background = "#616c96"
+background = "#CCB9C7"
 
 [colors.cursor]
-cursor = "#819cd6"
+cursor = "#7686A9"
 
 [cursor]
 thickness = 0.25
