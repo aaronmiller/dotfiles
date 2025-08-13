@@ -49,12 +49,12 @@ determine the exact padding."
    (eg-bg       '("#FCFBF9" "#FFFFFF" "white"))
    (eg-bg2      '("#F7F3EE" "#FFFFFF" "white"))
 
-   (eg-purple   '("#83577D" "#875FAF" "magenta"))
-   (eg-blue     '("#556995" "#5F87AF" "brightblue"))
-   (eg-teal     '("#477A7B" "#87AFAF" "brightgreen"))
-   (eg-orange   '("#886A44" "#875F00" "brightred"))
-   (eg-green    '("#747B4D" "#5F875F" "green"))
-   (eg-red      '("#8F5652" "#870000" "red"))
+   (eg-purple   '("#a6c1e0" "#875FAF" "magenta"))
+   (eg-blue     '("#819cd6" "#5F87AF" "brightblue"))
+   (eg-teal     '("#7ebebd" "#87AFAF" "brightgreen"))
+   (eg-orange   '("#cfcf9c" "#875F00" "brightred"))
+   (eg-green    '("#5b94ab" "#5F875F" "green"))
+   (eg-red      '("#e1c1ee" "#870000" "red"))
    (eg-berry    '("#AA5087" "#996699" "brightmagenta"))
 
    (eg-grey1    '("#ECEBE8" "#E4E4E4" "white"))
