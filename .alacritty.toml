@@ -27,7 +27,6 @@ style = "Bold"
 family = "Hack Nerd Font Mono"
 style = "Bold Italic"
 
-# Colors (Moonlight + Wilmersdorf)
 [colors]
 [colors.primary]
 background = "#212337"
