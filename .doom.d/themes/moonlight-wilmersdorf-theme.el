@@ -32,6 +32,7 @@ determine the exact padding."
   "A dark theme inspired by Ian Pan's Wilmersdorf"
 
   ;; default bg #212337
+  ;; moonlight
   ;; name        default   256       16
   ((bg         '("#212337" "#212337" "black"))
    (bg-alt     '("#191a2a" "#191a2a" "black"))
@@ -49,6 +50,7 @@ determine the exact padding."
    (fg         '("#c8d3f5" "#c8d3f5" "brightwhite"))
    (fg-alt     '("#b4c2f0" "#b4c2f0" "white"))
 
+   ;; wilmersdorf
    (grey       base5)
    (red        '("#e1c1ee" "#e1c1ee" "red"          ))
    (orange     '("#a6c1e0" "#a6c1e0" "brightred"    ))
