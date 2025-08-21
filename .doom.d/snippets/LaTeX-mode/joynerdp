@@ -1,0 +1,36 @@
+# -*- mode: snippet -*-
+# name: joyner document format
+# key: jdfdp
+# --
+
+\documentclass[11pt]{article}
+\usepackage[top=1in, bottom=1.5in, left=1.5in, right=1.5in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath}
+\parindent 0px
+\begin{document}
+\title{CS 6515 Fall 2025 - }
+\date{}
+\author{Aaron Julian Miller \\\ amiller376@gatech.edu}
+\maketitle
+
+\subsection*{Problem Statement}
+
+\subsection*{Subproblem Definition}
+
+\subsection*{Recurrence Definition}
+
+\subsubsection*{Base Cases}
+
+\subsubsection*{Recurrence}
+
+\subsection*{Implementation Analysis}
+
+Number of subproblems: \\\
+
+Runtime to Fill Table: \\\
+
+Return Extraction: \\\
+
+Return Extraction Runtime:
+
+\end{document}
