@@ -24,6 +24,7 @@
   :config
   (setq! +latex-viewers '(pdf-tools)
          explicit-shell-file-name "/bin/bash"
+         font-latex-fontify-script nil
          frame-title-format "\n"
          gc-cons-threshold (* 100 1024 1024)
          mouse-wheel-flip-direction t
@@ -31,6 +32,7 @@
          ns-right-alternate-modifier 'meta
          ns-use-native-fullscreen t
          sh-indentation 2
+         tex-fontify-script nil
          text-scale-mode-step 1
          tramp-allow-unsafe-temporary-files t
          tramp-use-ssh-controlmaster-options nil
