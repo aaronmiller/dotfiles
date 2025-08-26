@@ -22,6 +22,10 @@
 
 \subsubsection*{Recurrence}
 
+\begin{aligned}
+
+\end{aligned}
+
 \subsection*{Implementation Analysis}
 
 Number of subproblems: \\\
