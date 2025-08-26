@@ -14,19 +14,19 @@
 \author{Aaron Julian Miller \\\ amiller376@gatech.edu}
 \maketitle
 
-\subsection*{Subproblem Definition}
+\section*{Subproblem Definition}
 
-\subsection*{Recurrence Definition}
+\section*{Recurrence Definition}
 
-\subsubsection*{Base Cases}
+\subsection*{Base Cases}
 
-\subsubsection*{Recurrence}
+\subsection*{Recurrence}
 
 \begin{aligned}
 
 \end{aligned}
 
-\subsection*{Implementation Analysis}
+\section*{Implementation Analysis}
 
 \textbf{Number of subproblems:}
 
