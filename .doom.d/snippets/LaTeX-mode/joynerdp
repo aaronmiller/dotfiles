@@ -28,11 +28,11 @@
 
 \subsection*{Implementation Analysis}
 
-Number of subproblems: \\\
+Number of subproblems:
 
-Runtime to fill table: \\\
+Runtime to fill table:
 
-Return extraction: \\\
+Return extraction:
 
 Return extraction runtime:
 
