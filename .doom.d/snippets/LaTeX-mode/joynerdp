@@ -28,12 +28,12 @@
 
 \subsection*{Implementation Analysis}
 
-Number of subproblems:
+\textbf{Number of subproblems:}
 
-Runtime to fill table:
+\textbf{Runtime to fill table:}
 
-Return extraction:
+\textbf{Return extraction:}
 
-Return extraction runtime:
+\textbf{Return extraction runtime:}
 
 \end{document}
