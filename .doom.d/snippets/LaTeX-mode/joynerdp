@@ -18,22 +18,14 @@
 
 \section*{Recurrence Definition}
 
-\subsection*{Base Cases}
-
-\subsection*{Recurrence}
-
-\begin{aligned}
-
-\end{aligned}
-
 \section*{Implementation Analysis}
 
-\textbf{Number of subproblems:}
+State the number of subproblems:
 
-\textbf{Runtime to fill table:}
+State the runtime for table fill:
 
-\textbf{Return extraction:}
+State how the return is extracted:
 
-\textbf{Return extraction runtime:}
+State the runtime of that return extraction:
 
 \end{document}
