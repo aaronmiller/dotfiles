@@ -8,9 +8,9 @@
 \usepackage{amsfonts, amssymb, amsmath}
 \usepackage{parskip}
 \parindent 0px
-\title{}
-\date{}
-\author{}
-\maketitle
 \begin{document}
+\title{CS 6515 Fall 2025 - }
+\date{}
+\author{Aaron Julian Miller \\\ amiller376@gatech.edu}
+\maketitle
 \end{document}
