@@ -1,20 +1,20 @@
 [colors]
 [colors.primary]
-background = "#0b4f41"
-foreground = "#b2ffff"
+background = "#0b3641"
+foreground = "#b2e6ff"
 
 [colors.normal]
-black = "#004634"
-white = "#9eeefa"
-red = "#cbedf8"
-green = "#45c0b5"
-yellow = "#b9fba6"
-blue = "#6bc8e0"
-magenta = "#90edea"
-cyan = "#5cb5c6"
+black = "#002d34"
+white = "#9ed5fa"
+red = "#cbd4f8"
+green = "#45a7b5"
+yellow = "#b9e2a6"
+blue = "#6bafe0"
+magenta = "#90d4ea"
+cyan = "#5c9cc6"
 
 [colors.selection]
-background = "#4b98a0"
+background = "#4b7fa0"
 
 [colors.cursor]
-cursor = "#6bc8e0"
+cursor = "#6bafe0"
