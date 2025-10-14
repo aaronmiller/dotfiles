@@ -208,7 +208,7 @@ determine the exact padding."
    (modeline-bg-l
     (if -modeline-bright
         eg-bg2
-      (doom-blend base1 fg 0.96)))
+      (doom-blend eg-bg2 fg 0.96)))
    (modeline-bg-inactive eg-bg2)
    (modeline-bg-inactive-l `(,(doom-darken (car eg-bg2) 0.05) ,@(cdr base1))))
 
