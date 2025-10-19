@@ -98,12 +98,10 @@ determine the exact padding."
    (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
-   (modeline-bg
-    `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
-   (modeline-bg-l
-    `(,(doom-darken (car bg) 0.15) ,@(cdr base0)))
-   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
-   (modeline-bg-inactive-l (doom-darken bg 0.1)))
+   (modeline-bg bg-alt)
+   (modeline-bg-l bg-alt)
+   (modeline-bg-inactive bg-alt)
+   (modeline-bg-inactive-l bg-alt))
 
 
   ;;;; Base theme face overrides
