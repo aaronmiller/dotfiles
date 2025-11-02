@@ -48,6 +48,7 @@ determine the exact padding."
 
 (def-doom-theme spacegrey-wilmersdorf
   "A dark theme inspired by Atom Spacegrey Dark"
+
   ;; default bg #2b303b
   ;; spacegrey
   ;; name        default   256       16
