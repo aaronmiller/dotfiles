@@ -34,7 +34,7 @@ determine the exact padding."
   ;; default bg #212337
   ;; moonlight
   ;; name        default   256       16
-  ((bg         '("#212337" "#212337"  "black"))
+  ((bg         '("#212337" "#212337" "black"))
    (bg-alt     '("#191a2a" "#191a2a" "black"))
    (base0      '("#161a2a" "#161a2a" "black"))
    (base1      '("#191a2a" "#191a2a" "brightblack"))
