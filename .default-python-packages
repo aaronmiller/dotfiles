@@ -1,3 +1,4 @@
+black-macchiato; python_version > '2.7'
 black; python_version > '2.7'
 isort
 pyright; python_version > '2.7'
