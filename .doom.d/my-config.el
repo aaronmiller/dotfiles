@@ -78,7 +78,6 @@
   (setq! eglot-connect-timeout nil)
 
   (add-to-list 'eglot-server-programs
-               ;; latex
                `((latex-mode plain-tex-mode context-mode texinfo-mode bibtex-mode tex-mode)
                  . ,(eglot-alternatives '("texlab")))))
 
