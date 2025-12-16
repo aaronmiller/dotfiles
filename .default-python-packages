@@ -1,5 +1,5 @@
 basedpyright; python_version > '2.7'
 black-macchiato; python_version > '2.7'
 black; python_version > '2.7'
-isort
+isort; python_version > '2.7'
 virtualenvwrapper
