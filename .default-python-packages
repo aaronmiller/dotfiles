@@ -1,5 +1,5 @@
-basedpyright; python_version > '2.7'
-black-macchiato; python_version > '2.7'
-black; python_version > '2.7'
-isort; python_version > '2.7'
-virtualenvwrapper
+basedpyright==1.36.1; python_version > '2.7'
+black-macchiato==1.3.0; python_version > '2.7'
+black==25.12.0; python_version > '2.7'
+isort==7.0.0; python_version > '2.7'
+virtualenvwrapper==6.1.1
