@@ -27,6 +27,7 @@
          font-latex-fontify-script nil
          frame-title-format "\n"
          gc-cons-threshold (* 100 1024 1024)
+         js-indent-level 2
          mouse-wheel-flip-direction t
          mouse-wheel-tilt-scroll t
          ns-right-alternate-modifier 'meta
