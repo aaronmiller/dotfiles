@@ -2,7 +2,7 @@ golang 1.23.6
 java openjdk-23
 lua 5.4.7
 nodejs 22.13.1
-python 2.7.18 3.13.1
+python 2.7.18 3.10.19
 ruby 3.4.1
 rust 1.84.1
 pipenv 2025.0.4
