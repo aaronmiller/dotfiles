@@ -99,7 +99,6 @@
          projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/") nil)))
 
 (use-package! py-isort
-  :ensure t
   :hook (before-save . py-isort-before-save)
   :config
   (setq! py-isort-options '("--profile" "black")))
