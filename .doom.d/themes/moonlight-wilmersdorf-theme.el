@@ -156,7 +156,15 @@ determine the exact padding."
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;; Font-Lock
+   (font-lock-comment-face
+    :foreground comments
+    :inherit 'italic)
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
+    (font-lock-comment-delimiter-face    :inherit font-lock-comment-face))
 
   ;;;; Base theme variable overrides-
   ()

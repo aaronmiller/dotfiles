@@ -17,8 +17,7 @@
 
 (use-package! doom-themes
   :config
-  (setq! doom-themes-enable-italic nil
-         doom-themes-padded-modeline t))
+  (setq! doom-themes-padded-modeline t))
 
 (use-package! emacs
   :config
