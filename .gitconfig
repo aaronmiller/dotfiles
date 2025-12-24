@@ -12,5 +12,7 @@
 	prune = true
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
 [include]
 	path = ~/.gitconfig_user
