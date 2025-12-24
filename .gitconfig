@@ -12,3 +12,5 @@
 	prune = true
 [init]
 	defaultBranch = main
+[include]
+	path = ~/.gitconfig_user
