@@ -58,6 +58,7 @@
   (global-set-key (kbd "s-9") #'+workspace/switch-to-final)
   (global-set-key (kbd "s-<down>") #'evil-goto-line)
   (global-set-key (kbd "s-<return>") #'toggle-frame-fullscreen)
+  (global-set-key (kbd "s-p") #'demap-toggle)
   (global-set-key (kbd "s-<up>") #'evil-goto-first-line)
   (global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
   (global-set-key (kbd "s-\\") #'treemacs-select-window)
@@ -73,7 +74,8 @@
         :nvie "s-7" #'+workspace/switch-to-6
         :nvie "s-8" #'+workspace/switch-to-7
         :nvie "s-9" #'+workspace/switch-to-final
-        :nvie "s-<return>" #'toggle-frame-fullscreen))
+        :nvie "s-<return>" #'toggle-frame-fullscreen
+        :nvie "s-p" #'demap-toggle))
 
 (use-package! eglot
   :config
