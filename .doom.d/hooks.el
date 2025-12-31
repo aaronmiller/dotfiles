@@ -1,5 +1,9 @@
 ;;; $DOOMDIR/hooks.el -*- lexical-binding: t; -*-
 
+(defun disable-line-numbers-hook ()
+  "Turn off display-line-numbers-mode in specific modes."
+  (display-line-numbers-mode 0))
+
 (add-hook! '(conf-mode-hook prog-mode-hook))
 
 (add-hook! '+doom-dashboard-functions
@@ -12,8 +16,12 @@
     (prettify-symbols-mode -1)))
 
 (add-hook! 'c-mode-common-hook #'google-set-c-style)
+(add-hook! 'help-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
+(add-hook! 'magit-status-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
+(add-hook! 'treemacs-mode-hook #'disable-line-numbers-hook)
+(add-hook! 'vterm-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
 (add-hook! 'yaml-mode-hook #'toggle-truncate-lines)
 

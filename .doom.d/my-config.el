@@ -39,6 +39,8 @@
          warning-suppress-log-types '((transient) (transient) (defvaralias))
          warning-suppress-types '((transient) (defvaralias)))
 
+  (global-display-line-numbers-mode t)
+
   (global-set-key (kbd "M-s-;") #'+workspace/switch-right)
   (global-set-key (kbd "M-s-<left>") #'previous-buffer)
   (global-set-key (kbd "M-s-<right>") #'next-buffer)
