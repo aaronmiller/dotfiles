@@ -1,7 +1,6 @@
 ;;; $DOOMDIR/hooks.el -*- lexical-binding: t; -*-
 
 (defun disable-line-numbers-hook ()
-  "Turn off display-line-numbers-mode in specific modes."
   (display-line-numbers-mode 0))
 
 (add-hook! '(conf-mode-hook prog-mode-hook))
