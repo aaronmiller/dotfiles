@@ -61,7 +61,7 @@
   (global-set-key (kbd "s-p") #'demap-toggle)
   (global-set-key (kbd "s-<up>") #'evil-goto-first-line)
   (global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
-  (global-set-key (kbd "s-\\") #'treemacs/toggle)
+  (global-set-key (kbd "s-\\") #'+treemacs/toggle)
   (global-set-key (kbd "s-d") #'+evil/window-vsplit-and-follow)
 
   (map! :nvie "s-0" #'doom/reset-font-size
