@@ -1,7 +1,6 @@
 [general]
 import = [
-"~/dotfiles/alacritty-moonlight-wilmersdorf.toml",
-# "~/dotfiles/alacritty-earl-grey.toml",
+  "~/dotfiles/.alacritty-moonlight-wilmersdorf.toml",
 ]
 
 [window]
