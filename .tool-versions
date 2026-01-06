@@ -5,4 +5,4 @@ nodejs 22.13.1
 python 2.7.18 3.10.19
 ruby 3.4.1
 rust 1.84.1
-pipx 1.8.0
+uv 0.9.22
