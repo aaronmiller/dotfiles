@@ -133,3 +133,8 @@ fi
 if [[ $(uname -s) == "Darwin" ]]; then
   typeset -U PATH
 fi
+
+# regenerate doom envvars file
+if [[ "$INSIDE_EMACS" != "vterm" ]]; then
+  doom env > /dev/null 2>&1
+fi
