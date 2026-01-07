@@ -160,6 +160,7 @@
 (custom-set-faces
  '(consult-line-number ((t (:height 0.8 :weight bold))))
  '(consult-line-number-wrapped ((t (:height 0.8 :weight bold))))
+ '(demap-minimap-font-face ((t (:height 0.2 :family "BlockFont"))))
  '(line-number ((t (:height 0.8 :weight bold))))
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
