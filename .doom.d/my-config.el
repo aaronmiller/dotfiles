@@ -161,10 +161,17 @@
 (custom-set-faces
  '(consult-line-number ((t (:height 0.8 :weight bold))))
  '(consult-line-number-wrapped ((t (:height 0.8 :weight bold))))
- '(demap-minimap-font-face ((t (:height 30 :family "Minimap"))))
  '(line-number ((t (:height 0.8 :weight bold))))
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
+
+(after! (solaire-mode demap)
+  (let ((bg-alt "#031d34"))
+    (face-spec-set 'demap-minimap-font-face
+                   `((t :background ,bg-alt
+                      :inherit    unspecified
+                      :family     "Minimap"
+                      :height     30          )))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
