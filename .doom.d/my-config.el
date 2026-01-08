@@ -108,6 +108,10 @@
   :config
   (setq! py-isort-options '("--profile" "black")))
 
+(use-package! python
+  :bind (:map python-mode-map
+              ("DEL" . nil)))
+
 (use-package! recentf
   :config
   (add-to-list 'recentf-exclude "\\.emacs\\.d/\\.local/etc/workspaces/autosave"))
