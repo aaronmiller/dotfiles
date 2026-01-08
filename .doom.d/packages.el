@@ -56,7 +56,6 @@
 (package! evil-tutor)
 (package! gh)
 (package! gh-md)
-(package! git-modes)
 (package! google-c-style)
 (package! python-black)
 (package! rego-mode)
