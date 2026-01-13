@@ -169,13 +169,12 @@
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
 
+;; customize minimap
 (after! (solaire-mode demap)
-  (let ((bg-alt "#031d34"))
-    (face-spec-set 'demap-minimap-font-face
-                   `((t :background ,bg-alt
-                        :inherit    unspecified
-                        :family     "Minimap"
-                        :height     30          )))))
+  (face-spec-set 'demap-minimap-font-face
+                 `((t :inherit    unspecified
+                      :family     "Minimap"
+                      :height     30          ))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
