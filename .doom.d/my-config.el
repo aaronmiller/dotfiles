@@ -174,7 +174,7 @@
   (face-spec-set 'demap-minimap-font-face
                  `((t :inherit    unspecified
                       :family     "Minimap"
-                      :height     30          ))))
+                      :height     16          ))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
