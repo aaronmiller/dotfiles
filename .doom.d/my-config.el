@@ -101,7 +101,7 @@
   :config
   (setq! projectile-auto-discover t
          projectile-file-exists-remote-cache-expire nil
-         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/") nil)))
+         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/" "~/omscs/omscs-cs6515") nil)))
 
 (use-package! py-isort
   :hook (before-save . py-isort-before-save)
