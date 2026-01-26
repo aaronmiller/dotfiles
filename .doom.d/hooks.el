@@ -21,6 +21,13 @@
 (add-hook! 'magit-status-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'projectile-after-switch-project-hook #'demap-toggle)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
+
+(add-hook! 'prog-mode-hook
+  (lambda ()
+    (when (boundp 'eglot-mode)
+      (eglot-mode -1))
+    (eglot-shutdown)))
+
 (add-hook! 'treemacs-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'vterm-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
