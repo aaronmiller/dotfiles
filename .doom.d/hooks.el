@@ -28,6 +28,7 @@
       (eglot-mode -1))
     (eglot-shutdown)))
 
+(add-hook! 'python-mode-hook #'python-black-on-save-mode)
 (add-hook! 'treemacs-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'vterm-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
