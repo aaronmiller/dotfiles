@@ -59,7 +59,7 @@
   (global-set-key (kbd "s-9") #'+workspace/switch-to-final)
   (global-set-key (kbd "s-<down>") #'evil-goto-line)
   (global-set-key (kbd "s-<return>") #'toggle-frame-fullscreen)
-  (global-set-key (kbd "s-p") #'demap-toggle)
+  ;; (global-set-key (kbd "s-p") #'demap-toggle)
   (global-set-key (kbd "s-<up>") #'evil-goto-first-line)
   (global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
   (global-set-key (kbd "s-\\") #'+treemacs/toggle)
@@ -75,8 +75,8 @@
         :nvie "s-7" #'+workspace/switch-to-6
         :nvie "s-8" #'+workspace/switch-to-7
         :nvie "s-9" #'+workspace/switch-to-final
-        :nvie "s-<return>" #'toggle-frame-fullscreen
-        :nvie "s-p" #'demap-toggle))
+        :nvie "s-<return>" #'toggle-frame-fullscreen))
+        ;; :nvie "s-p" #'demap-toggle))
 
 (use-package! eglot
   :config
@@ -165,12 +165,12 @@
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
 
-;; customize minimap
-(after! (solaire-mode demap)
-  (face-spec-set 'demap-minimap-font-face
-                 `((t :inherit    unspecified
-                      :family     "Minimap"
-                      :height     16          ))))
+;; ;; customize minimap
+;; (after! (solaire-mode demap)
+;;   (face-spec-set 'demap-minimap-font-face
+;;                  `((t :inherit    unspecified
+;;                       :family     "Minimap"
+;;                       :height     16          ))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
