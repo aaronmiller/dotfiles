@@ -41,6 +41,7 @@
          warning-suppress-types '((transient) (defvaralias)))
 
   (global-display-line-numbers-mode t)
+  (pixel-scroll-precision-mode t)
 
   (global-set-key (kbd "M-s-;") #'+workspace/switch-right)
   (global-set-key (kbd "M-s-<left>") #'previous-buffer)
