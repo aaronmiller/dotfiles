@@ -88,6 +88,10 @@
   (setq! evil-emacs-state-cursor '(bar)
          evil-escape-key-sequence nil))
 
+(use-package! flycheck-eglot
+  :config
+  (global-flycheck-eglot-mode -1))
+
 (use-package! magit
   :config
   (setq! magit-git-executable "/Applications/Xcode.app/Contents/Developer/usr/bin/git"
