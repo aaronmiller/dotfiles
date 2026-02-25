@@ -127,7 +127,7 @@
            treemacs-recenter-after-file-follow t
            treemacs-space-between-root-nodes nil
            treemacs-user-mode-line-format 'none
-           treemacs-width 55
+           treemacs-width 60
            treemacs-width-is-initially-locked nil))
 
   ;; HACK: This resets the default theme when treemacs initializes.
