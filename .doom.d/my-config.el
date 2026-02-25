@@ -60,7 +60,6 @@
   (global-set-key (kbd "s-9") #'+workspace/switch-to-final)
   (global-set-key (kbd "s-<down>") #'evil-goto-line)
   (global-set-key (kbd "s-<return>") #'toggle-frame-fullscreen)
-  ;; (global-set-key (kbd "s-p") #'demap-toggle)
   (global-set-key (kbd "s-<up>") #'evil-goto-first-line)
   (global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
   (global-set-key (kbd "s-\\") #'+treemacs/toggle)
@@ -77,7 +76,6 @@
         :nvie "s-8" #'+workspace/switch-to-7
         :nvie "s-9" #'+workspace/switch-to-final
         :nvie "s-<return>" #'toggle-frame-fullscreen))
-        ;; :nvie "s-p" #'demap-toggle))
 
 (use-package! eglot
   :config
@@ -102,7 +100,7 @@
   :config
   (setq! projectile-auto-discover t
          projectile-file-exists-remote-cache-expire nil
-         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/" "~/devtools/" "~/omscs/omscs-cs6515") nil)))
+         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/") nil)))
 
 (use-package! py-isort
   :hook (before-save . py-isort-before-save)
@@ -169,13 +167,6 @@
  '(line-number ((t (:height 0.8 :weight bold))))
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
-
-;; ;; customize minimap
-;; (after! (solaire-mode demap)
-;;   (face-spec-set 'demap-minimap-font-face
-;;                  `((t :inherit    unspecified
-;;                       :family     "Minimap"
-;;                       :height     16          ))))
 
 ;; Hooks
 (load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
