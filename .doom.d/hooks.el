@@ -19,7 +19,6 @@
 (add-hook! 'help-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'magit-status-mode-hook #'disable-line-numbers-hook)
-;; (add-hook! 'projectile-after-switch-project-hook #'demap-toggle)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
 
 (add-hook! 'prog-mode-hook
