@@ -16,6 +16,7 @@
 
 (add-hook! 'before-save-hook #'whitespace-cleanup)
 (add-hook! 'c-mode-common-hook #'google-set-c-style)
+(add-hook! 'focus-out-hook #'garbage-collect)
 (add-hook! 'help-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
 (add-hook! 'magit-status-mode-hook #'disable-line-numbers-hook)
