@@ -11,9 +11,11 @@
 
 (use-package! doom-modeline
   :config
-  (setq! doom-modeline-hud t
+  (setq! doom-modeline-buffer-file-name-style 'file-name
+         doom-modeline-enable-word-count nil
+         doom-modeline-hud t
          doom-modeline-modal-modern-icon nil
-         doom-modeline-vcs-max-length 100))
+         doom-modeline-vcs-max-length 12))
 
 (use-package! doom-themes
   :config
@@ -22,6 +24,7 @@
 (use-package! emacs
   :config
   (setq! +latex-viewers '(pdf-tools)
+         auto-revert-check-vc-info nil
          display-line-numbers-type nil
          explicit-shell-file-name "/bin/bash"
          font-latex-fontify-script nil
@@ -29,16 +32,22 @@
          gc-cons-threshold (* 100 1024 1024)
          gcmh-high-cons-threshold (* 100 1024 1024)
          mouse-wheel-flip-direction t
+         mouse-wheel-scroll-amount '(1 ((shift) . 1))
          mouse-wheel-tilt-scroll t
          ns-right-alternate-modifier 'meta
          ns-use-native-fullscreen t
          read-process-output-max (* 1024 1024)
+         scroll-conservatively 101
          tex-fontify-script nil
          text-scale-mode-step 1
          tramp-allow-unsafe-temporary-files t
          tramp-use-ssh-controlmaster-options nil
          warning-suppress-log-types '((transient) (transient) (defvaralias))
          warning-suppress-types '((transient) (defvaralias)))
+
+(setq-default inhibit-compacting-font-caches t)
+(setq-default use-dialog-box nil)
+(setq-default use-file-dialog nil)
 
   (global-display-line-numbers-mode t)
 

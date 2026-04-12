@@ -16,6 +16,7 @@
 
 (add-hook! 'before-save-hook #'whitespace-cleanup)
 (add-hook! 'c-mode-common-hook #'google-set-c-style)
+(add-hook! 'emacs-startup-hook #'my-min-file-handlers)
 (add-hook! 'focus-out-hook #'garbage-collect)
 (add-hook! 'help-mode-hook #'disable-line-numbers-hook)
 (add-hook! 'jinja2-mode-hook #'toggle-truncate-lines)
