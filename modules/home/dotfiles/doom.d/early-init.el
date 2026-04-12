@@ -1,4 +1,4 @@
-;;; $DOOMDIR/early-init.el -*- lexical-binding: t; -*-
+;;; early-init.el -*- lexical-binding: t; -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 1. UI LOAD OPTIMIZATION

@@ -1,5 +1,5 @@
 ;; -*- no-byte-compile: t; -*-
-;;; $DOOMDIR/packages.el
+;;; packages.el -*- lexical-binding: t; -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 1. UI & VISUALS
@@ -18,7 +18,7 @@
 (package! evil-tutor)
 (package! google-c-style)
 (package! rego-mode)
-(package! xenops)        ; LaTeX mathematical notation rendering
+(package! xenops)
 (package! py-isort)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
