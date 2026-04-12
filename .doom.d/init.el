@@ -1,17 +1,17 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
 (doom! :completion
-       (vertico +icons)    ; The leanest, fastest search/completion engine
+       (vertico +icons)    ; Leanest, fastest search/completion engine
 
        :ui
        deft                ; Notational velocity
        doom                ; Core UI
-       doom-dashboard      ; Faster startup by managing the splash screen
+       doom-dashboard      ; Managed splash screen for faster startup
        hl-todo             ; Low-overhead TODO highlighting
        modeline            ; Snazzy modeline
        (popup +all +defaults) ; Mandatory window management
        treemacs            ; Project drawer
-       vc-gutter           ; Fringe diffs (removed +pretty for speed)
+       vc-gutter           ; Fringe diffs (standard fringe is faster than +pretty)
        workspaces          ; Workspace isolation
        zen                 ; Distraction-free mode
 
@@ -19,7 +19,7 @@
        (evil +everywhere)  ; Mandatory for your keybindings
        format              ; Automated prettiness (black, isort, etc.)
        multiple-cursors    ; Efficient multi-line editing
-       snippets            ; Required for most LSP templates
+       snippets            ; Required for LSP templates
 
        :emacs
        dired               ; Best-in-class file management
@@ -31,7 +31,7 @@
        vterm               ; Fastest terminal (C-module based)
 
        :checkers
-       syntax              ; Flycheck (on-the-fly feedback)
+       syntax              ; Flycheck feedback
 
        :tools
        (debugger +lsp)     ; Debugging via LSP
@@ -59,8 +59,10 @@
        (latex +cdlatex +latexmk) ; Optimized LaTeX
        lua                 ; Fast scripting
        (markdown +grip)    ; Docs
-       (python +lsp +pyright) ; Python (configured for Eglot)
+       (python +lsp +pyright) ; Python
        sh                  ; Shell scripts
 
        :config
-       (default +smartparens))
+       ;; +bindings: Restores SPC leader keys and project commands (SPC p)
+       (default +smartparens +bindings)) 
+

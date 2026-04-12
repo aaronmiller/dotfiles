@@ -50,7 +50,7 @@
 (use-package! projectile
   :config
   (setq! projectile-enable-caching t
-         projectile-auto-discover nil
+         projectile-auto-discover t
          projectile-project-search-path '("~/devtools" "~/dotfiles")))
 
 (use-package! treemacs
