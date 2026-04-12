@@ -62,6 +62,7 @@
        (latex +cdlatex +latexmk)                ; Scientific writing
        lua                                      ; Scripting
        (markdown +grip)                         ; Documentation
+       nix                                      ; Declarative package management
        (python +lsp +pyright)                   ; Python with Eglot
        sh                                       ; Shell scripting
 

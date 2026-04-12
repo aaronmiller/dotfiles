@@ -145,3 +145,7 @@
  '(line-number ((t (:height 0.8 :weight bold))))
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
+
+(when (eq system-type 'darwin)
+  (setenv "PATH" (concat (getenv "PATH") ":/nix/var/nix/profiles/default/bin:~/.nix-profile/bin"))
+  (setq exec-path (append exec-path '("/nix/var/nix/profiles/default/bin" "~/.nix-profile/bin"))))
