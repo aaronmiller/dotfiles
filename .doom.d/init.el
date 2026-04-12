@@ -1,7 +1,7 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
 (doom! :completion
-       (vertico +icons)    ; Leanest, fastest search/completion engine
+       vertico    ; Leanest, fastest search/completion engine
 
        :ui
        deft                ; Notational velocity
@@ -64,5 +64,4 @@
 
        :config
        ;; +bindings: Restores SPC leader keys and project commands (SPC p)
-       (default +smartparens +bindings)) 
-
+       (default +smartparens +bindings))

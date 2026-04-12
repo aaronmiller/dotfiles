@@ -4,21 +4,24 @@
 ;; 1. EXTREME PERFORMANCE (Emacs 30 Internal)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq! native-comp-speed 3
-       native-comp-async-report-warnings-errors 'silent)
+(setq! native-comp-async-report-warnings-errors 'silent
+       native-comp-speed 3)
 
-(setq-default redisplay-dont-pause t
-              scroll-margin 0
-              scroll-conservatively 101
+(setq-default bidi-display-reordering nil
               fast-but-imprecise-scrolling t
-              read-process-output-max (* 1024 1024)
-              inhibit-compacting-font-caches t
+              frame-title-format "\n"
               idle-update-delay 1.0
-              bidi-display-reordering nil) ; Disable R2L text scanning for speed
+              inhibit-compacting-font-caches t
+              ns-right-alternate-modifier 'meta
+              ns-use-native-fullscreen t
+              read-process-output-max (* 1024 1024)
+              redisplay-dont-pause t
+              scroll-conservatively 101
+              scroll-margin 0)
 
 (after! gcmh
-  (setq! gcmh-idle-delay 5
-         gcmh-high-cons-threshold (* 32 1024 1024)))
+  (setq! gcmh-high-cons-threshold (* 32 1024 1024)
+         gcmh-idle-delay 5))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 2. LSP BOOSTER (Eglot Wrapper)
@@ -43,59 +46,77 @@
 (setq! display-line-numbers-type 'relative
        doom-modeline-buffer-file-name-style 'file-name
        doom-modeline-enable-word-count nil
-       doom-modeline-vcs-max-length 12
        doom-modeline-hud t
+       doom-modeline-vcs-max-length 12
        doom-themes-padded-modeline t)
 
+(use-package! deft
+  :config (setq! deft-new-file-format "%Y-%m-%d"))
+
+(use-package! magit
+  :config (setq! magit-log-section-commit-count 25
+                 magit-refresh-status-buffer nil))
+
 (use-package! projectile
-  :config
-  (setq! projectile-enable-caching t
-         projectile-auto-discover t
-         projectile-project-search-path '("~/devtools" "~/dotfiles")))
+  :config (setq! projectile-auto-discover t
+                 projectile-enable-caching t
+                 projectile-project-search-path '("~/devtools" "~/dotfiles")))
+
+(use-package! py-isort
+  :hook (before-save . py-isort-before-save))
 
 (use-package! treemacs
   :defer t
-  :config
-  (setq! treemacs-git-mode -1
-         treemacs-width 64
-         treemacs-user-mode-line-format 'none)
+  :config (setq! treemacs-git-mode -1
+                 treemacs-width 64
+                 treemacs-user-mode-line-format 'none)
+  (treemacs-create-theme "Default")
+  (treemacs-load-theme "simple")
   (treemacs-follow-mode t))
 
-(use-package! magit :config (setq! magit-refresh-status-buffer nil magit-log-section-commit-count 25))
-(use-package! vterm :config (setq! vterm-max-scrollback 5000))
-(use-package! deft :config (setq! deft-new-file-format "%Y-%m-%d"))
-(use-package! writeroom-mode :config (setq! writeroom-width 120))
-(use-package! py-isort :hook (before-save . py-isort-before-save))
+(use-package! vterm
+  :config (setq! vterm-max-scrollback 5000))
+
+(use-package! writeroom-mode
+  :config (setq! writeroom-width 120))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 4. CUSTOM HOOKS & LOGIC
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-optimize-large-files-h ()
+  "Emergency performance brake for files > 1MB."
   (when (> (buffer-size) (* 1024 1024))
     (display-line-numbers-mode -1)
     (font-lock-mode -1)
     (git-gutter-mode -1)))
 
-(add-hook! 'find-file-hook #'my-optimize-large-files-h)
+(add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode) (hl-line-mode -1))
 (add-hook! '(prog-mode-hook conf-mode-hook text-mode-hook) #'display-line-numbers-mode)
+(add-hook! '(yaml-mode-hook jinja2-mode-hook) #'toggle-truncate-lines)
 (add-hook! 'before-save-hook #'whitespace-cleanup)
+(add-hook! 'find-file-hook #'my-optimize-large-files-h)
 (add-hook! 'python-mode-hook #'python-black-on-save-mode)
 (add-hook! 'vterm-mode-hook #'evil-emacs-state)
-(add-hook! '(yaml-mode-hook jinja2-mode-hook) #'toggle-truncate-lines)
 
-(add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode) (hl-line-mode -1))
-(remove-hook! '+doom-dashboard-functions #'doom-dashboard-widget-banner #'doom-dashboard-widget-footer #'doom-dashboard-widget-loaded)
+(remove-hook! '+doom-dashboard-functions
+  #'doom-dashboard-widget-banner
+  #'doom-dashboard-widget-footer
+  #'doom-dashboard-widget-loaded)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 5. KEYBINDINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(map! "s-'" #'+vterm/toggle
+;; Universal bindings (Priority Maps)
+(map! :map 'override :gniv "s-<return>" #'toggle-frame-fullscreen)
+
+;; Custom Keymap
+(map! "s-'"  #'+vterm/toggle
       "s-\\" #'+treemacs/toggle
-      "s-d" #'+evil/window-vsplit-and-follow
-      "s-D" #'+evil/window-split-and-follow
-      "s-<return>" #'toggle-frame-fullscreen
+      "s-d"  #'+evil/window-vsplit-and-follow
+      "s-D"  #'+evil/window-split-and-follow
+      :nvie "s-0" #'doom/reset-font-size
       :nvie "s-1" #'+workspace/switch-to-0
       :nvie "s-2" #'+workspace/switch-to-1
       :nvie "s-3" #'+workspace/switch-to-2
@@ -104,8 +125,7 @@
       :nvie "s-6" #'+workspace/switch-to-5
       :nvie "s-7" #'+workspace/switch-to-6
       :nvie "s-8" #'+workspace/switch-to-7
-      :nvie "s-9" #'+workspace/switch-to-final
-      :nvie "s-0" #'doom/reset-font-size)
+      :nvie "s-9" #'+workspace/switch-to-final)
 
 (custom-set-faces
  '(line-number ((t (:height 0.8 :weight bold))))
