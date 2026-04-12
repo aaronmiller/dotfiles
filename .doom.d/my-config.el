@@ -25,7 +25,7 @@
   :config
   (setq! +latex-viewers '(pdf-tools)
          auto-revert-check-vc-info nil
-         display-line-numbers-type nil
+         display-line-numbers-type t
          explicit-shell-file-name "/bin/bash"
          font-latex-fontify-script nil
          frame-title-format "\n"
