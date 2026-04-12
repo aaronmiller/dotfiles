@@ -1,183 +1,113 @@
-;;; $DOOMDIR/my-config.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(use-package! deft
-  :config
-  (setq! deft-new-file-format "%Y-%m-%d"))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 1. EXTREME PERFORMANCE (Emacs 30 Internal)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package! doom
-  :config
-  (setq! doom-big-font-increment 1
-         doom-font-increment 1))
+(setq! native-comp-speed 3
+       native-comp-async-report-warnings-errors 'silent)
 
-(use-package! doom-modeline
-  :config
-  (setq! doom-modeline-buffer-file-name-style 'file-name
-         doom-modeline-enable-word-count nil
-         doom-modeline-hud t
-         doom-modeline-modal-modern-icon nil
-         doom-modeline-vcs-max-length 12))
+(setq-default redisplay-dont-pause t
+              scroll-margin 0
+              scroll-conservatively 101
+              fast-but-imprecise-scrolling t
+              read-process-output-max (* 1024 1024)
+              inhibit-compacting-font-caches t
+              idle-update-delay 1.0
+              bidi-display-reordering nil) ; Disable R2L text scanning for speed
 
-(use-package! doom-themes
-  :config
-  (setq! doom-themes-padded-modeline t))
+(after! gcmh
+  (setq! gcmh-idle-delay 5
+         gcmh-high-cons-threshold (* 32 1024 1024)))
 
-(use-package! emacs
-  :config
-  (setq! +latex-viewers '(pdf-tools)
-         auto-revert-check-vc-info nil
-         display-line-numbers-type t
-         explicit-shell-file-name "/bin/bash"
-         font-latex-fontify-script nil
-         frame-title-format "\n"
-         gc-cons-threshold (* 100 1024 1024)
-         gcmh-high-cons-threshold (* 100 1024 1024)
-         mouse-wheel-flip-direction t
-         mouse-wheel-scroll-amount '(1 ((shift) . 1))
-         mouse-wheel-tilt-scroll t
-         ns-right-alternate-modifier 'meta
-         ns-use-native-fullscreen t
-         read-process-output-max (* 1024 1024)
-         scroll-conservatively 101
-         tex-fontify-script nil
-         text-scale-mode-step 1
-         tramp-allow-unsafe-temporary-files t
-         tramp-use-ssh-controlmaster-options nil
-         warning-suppress-log-types '((transient) (transient) (defvaralias))
-         warning-suppress-types '((transient) (defvaralias)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 2. LSP BOOSTER (Eglot Wrapper)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq-default inhibit-compacting-font-caches t)
-(setq-default use-dialog-box nil)
-(setq-default use-file-dialog nil)
+(after! eglot
+  (setq! eglot-events-buffer-size 0)
+  (fset #'jsonrpc--log-event #'ignore)
 
-  (global-display-line-numbers-mode t)
+  (defun +eglot-lsp-booster--advice-jsonrpc-parse (old-fn &rest args)
+    "Use emacs-lsp-booster for faster JSON to bytecode conversion."
+    (if-let ((booster-path (executable-find "emacs-lsp-booster")))
+        (let ((command (car args)))
+          (apply old-fn (cons (append (list booster-path "raw") command) (cdr args))))
+      (apply old-fn args)))
+  (advice-add 'eglot--executable-command :around #'+eglot-lsp-booster--advice-jsonrpc-parse))
 
-  (global-set-key (kbd "M-s-;") #'+workspace/switch-right)
-  (global-set-key (kbd "M-s-<left>") #'previous-buffer)
-  (global-set-key (kbd "M-s-<right>") #'next-buffer)
-  (global-set-key (kbd "M-s-l") #'+workspace/switch-left)
-  (global-set-key (kbd "s-'") #'+vterm/toggle)
-  (global-set-key (kbd "s-0") #'doom/reset-font-size)
-  (global-set-key (kbd "s-1") #'+workspace/switch-to-0)
-  (global-set-key (kbd "s-2") #'+workspace/switch-to-1)
-  (global-set-key (kbd "s-3") #'+workspace/switch-to-2)
-  (global-set-key (kbd "s-4") #'+workspace/switch-to-3)
-  (global-set-key (kbd "s-5") #'+workspace/switch-to-4)
-  (global-set-key (kbd "s-6") #'+workspace/switch-to-5)
-  (global-set-key (kbd "s-7") #'+workspace/switch-to-6)
-  (global-set-key (kbd "s-8") #'+workspace/switch-to-7)
-  (global-set-key (kbd "s-9") #'+workspace/switch-to-final)
-  (global-set-key (kbd "s-<down>") #'evil-goto-line)
-  (global-set-key (kbd "s-<return>") #'toggle-frame-fullscreen)
-  (global-set-key (kbd "s-<up>") #'evil-goto-first-line)
-  (global-set-key (kbd "s-D") #'+evil/window-split-and-follow)
-  (global-set-key (kbd "s-\\") #'+treemacs/toggle)
-  (global-set-key (kbd "s-d") #'+evil/window-vsplit-and-follow)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 3. UI, VISUALS & PACKAGE LOGIC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-  (map! :nvie "s-0" #'doom/reset-font-size
-        :nvie "s-1" #'+workspace/switch-to-0
-        :nvie "s-2" #'+workspace/switch-to-1
-        :nvie "s-3" #'+workspace/switch-to-2
-        :nvie "s-4" #'+workspace/switch-to-3
-        :nvie "s-5" #'+workspace/switch-to-4
-        :nvie "s-6" #'+workspace/switch-to-5
-        :nvie "s-7" #'+workspace/switch-to-6
-        :nvie "s-8" #'+workspace/switch-to-7
-        :nvie "s-9" #'+workspace/switch-to-final
-        :nvie "s-<return>" #'toggle-frame-fullscreen))
-
-(use-package! eglot
-  :config
-  (setq! eglot-connect-timeout nil))
-
-(use-package! evil
-  :config
-  (setq! evil-emacs-state-cursor '(bar)
-         evil-escape-key-sequence nil))
-
-(use-package! flycheck-eglot
-  :config
-  (global-flycheck-eglot-mode -1))
-
-(use-package! magit
-  :config
-  (setq! magit-git-executable "/Applications/Xcode.app/Contents/Developer/usr/bin/git"
-         magit-log-section-commit-count 25
-         magit-todos-insert-after '(bottom)))
+(setq! display-line-numbers-type 'relative
+       doom-modeline-buffer-file-name-style 'file-name
+       doom-modeline-enable-word-count nil
+       doom-modeline-vcs-max-length 12
+       doom-modeline-hud t
+       doom-themes-padded-modeline t)
 
 (use-package! projectile
   :config
-  (setq! projectile-auto-discover t
-         projectile-file-exists-remote-cache-expire nil
-         projectile-project-search-path (apply 'append projectile-project-search-path nil '("~/") nil)))
-
-(use-package! py-isort
-  :hook (before-save . py-isort-before-save)
-  :config
-  (setq! py-isort-options '("--profile" "black")))
-
-(use-package! python
-  :bind (:map python-mode-map
-              ("DEL" . nil)))
-
-(use-package! recentf
-  :config
-  (add-to-list 'recentf-exclude "\\.emacs\\.d/\\.local/etc/workspaces/autosave"))
-
-(use-package! shfmt
-  :config
-  (setq! shfmt-arguments '("-i" "2")))
+  (setq! projectile-enable-caching t
+         projectile-auto-discover nil
+         projectile-project-search-path '("~/devtools" "~/dotfiles")))
 
 (use-package! treemacs
   :defer t
   :config
-  (progn
-    (setq! treemacs-git-mode -1
-           treemacs-recenter-after-file-follow t
-           treemacs-space-between-root-nodes nil
-           treemacs-user-mode-line-format 'none
-           treemacs-width 64
-           treemacs-width-is-initially-locked nil))
+  (setq! treemacs-git-mode -1
+         treemacs-width 64
+         treemacs-user-mode-line-format 'none)
+  (treemacs-follow-mode t))
 
-  ;; HACK: This resets the default theme when treemacs initializes.
-  (treemacs-create-theme "Default")
-  (treemacs-load-theme "simple")
+(use-package! magit :config (setq! magit-refresh-status-buffer nil magit-log-section-commit-count 25))
+(use-package! vterm :config (setq! vterm-max-scrollback 5000))
+(use-package! deft :config (setq! deft-new-file-format "%Y-%m-%d"))
+(use-package! writeroom-mode :config (setq! writeroom-width 120))
+(use-package! py-isort :hook (before-save . py-isort-before-save))
 
-  (treemacs-follow-mode t)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 4. CUSTOM HOOKS & LOGIC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-  (map! :map treemacs-mode-map
-        "s-\\" (cmd!
-                (treemacs-visit-node-no-split)
-                (+treemacs/toggle))))
+(defun my-optimize-large-files-h ()
+  (when (> (buffer-size) (* 1024 1024))
+    (display-line-numbers-mode -1)
+    (font-lock-mode -1)
+    (git-gutter-mode -1)))
 
-(use-package! vterm
-  :config
-  (setq! vterm-ignore-blink-cursor nil
-         vterm-max-scrollback 100000
-         vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=no")
+(add-hook! 'find-file-hook #'my-optimize-large-files-h)
+(add-hook! '(prog-mode-hook conf-mode-hook text-mode-hook) #'display-line-numbers-mode)
+(add-hook! 'before-save-hook #'whitespace-cleanup)
+(add-hook! 'python-mode-hook #'python-black-on-save-mode)
+(add-hook! 'vterm-mode-hook #'evil-emacs-state)
+(add-hook! '(yaml-mode-hook jinja2-mode-hook) #'toggle-truncate-lines)
 
-  (map! :map vterm-mode-map
-        "M-<left>" (cmd! (vterm-send-key "\x62" nil t))
-        "M-<right>" (cmd! (vterm-send-key "\x66" nil t))
-        "s-<backspace>" (cmd! (vterm-send-key "\x15"))
-        "s-<left>" (cmd! (vterm-send-key "\x61" nil nil t))
-        "s-<right>" (cmd! (vterm-send-key "\x65" nil nil t)))
+(add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode) (hl-line-mode -1))
+(remove-hook! '+doom-dashboard-functions #'doom-dashboard-widget-banner #'doom-dashboard-widget-footer #'doom-dashboard-widget-loaded)
 
-  :custom
-  (vterm-always-compile-module t))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 5. KEYBINDINGS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package! writeroom-mode
-  :config
-  (setq! writeroom-width 120))
+(map! "s-'" #'+vterm/toggle
+      "s-\\" #'+treemacs/toggle
+      "s-d" #'+evil/window-vsplit-and-follow
+      "s-D" #'+evil/window-split-and-follow
+      "s-<return>" #'toggle-frame-fullscreen
+      :nvie "s-1" #'+workspace/switch-to-0
+      :nvie "s-2" #'+workspace/switch-to-1
+      :nvie "s-3" #'+workspace/switch-to-2
+      :nvie "s-4" #'+workspace/switch-to-3
+      :nvie "s-5" #'+workspace/switch-to-4
+      :nvie "s-6" #'+workspace/switch-to-5
+      :nvie "s-7" #'+workspace/switch-to-6
+      :nvie "s-8" #'+workspace/switch-to-7
+      :nvie "s-9" #'+workspace/switch-to-final
+      :nvie "s-0" #'doom/reset-font-size)
 
 (custom-set-faces
- '(consult-line-number ((t (:height 0.8 :weight bold))))
- '(consult-line-number-wrapped ((t (:height 0.8 :weight bold))))
  '(line-number ((t (:height 0.8 :weight bold))))
  '(line-number-current-line ((t (:height 0.8 :weight bold))))
  '(treemacs-root-face ((t (:height 1.0)))))
-
-;; Hooks
-(load! (concat (getenv "DOTFILES_DIR") "/.doom.d/hooks"))
-
-;; Custom functions
-(load! (concat (getenv "DOTFILES_DIR") "/.doom.d/functions"))
