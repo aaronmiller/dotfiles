@@ -19,6 +19,7 @@
 (package! google-c-style)
 (package! rego-mode)
 (package! xenops)        ; LaTeX mathematical notation rendering
+(package! py-isort)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 3. DISABLERS (Performance Optimization)

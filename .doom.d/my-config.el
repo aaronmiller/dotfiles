@@ -83,9 +83,6 @@
   (treemacs-load-theme "simple")
   (treemacs-follow-mode t))
 
-(use-package! vterm
-  :config (setq! vterm-max-scrollback 5000))
-
 (use-package! writeroom-mode
   :config (setq! writeroom-width 120))
 
@@ -106,7 +103,6 @@
 (add-hook! 'find-file-hook #'my-optimize-large-files-h)
 (add-hook! 'python-mode-hook #'python-black-on-save-mode)
 (add-hook! 'projectile-after-switch-project-hook #'treemacs-find-file)
-(add-hook! 'vterm-mode-hook #'evil-emacs-state)
 
 ;; Dashboard aesthetics: Hide modeline and cursor for a clean splash screen
 (remove-hook! '+doom-dashboard-functions
@@ -130,7 +126,6 @@
       "M-s-<left>" #'previous-buffer
       "M-s-<right>" #'next-buffer
       "M-s-l" #'+workspace/switch-left
-      "s-'"  #'+vterm/toggle
       "s-D"  #'+evil/window-split-and-follow
       "s-\\" #'+treemacs/toggle
       "s-d"  #'+evil/window-vsplit-and-follow

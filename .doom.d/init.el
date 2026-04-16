@@ -31,7 +31,7 @@
        vc                                       ; Core version control support
 
        :term
-       vterm                                    ; C-compiled terminal emulator
+       eat                                      ; Hello, simplicity
 
        :checkers
        syntax                                   ; Real-time error feedback
