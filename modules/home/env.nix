@@ -14,5 +14,6 @@
 
   home.sessionPath = [
     "/Users/${user}/.local/bin"
+    "/Users/${user}/.config/emacs/bin"
   ];
 }
