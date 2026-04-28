@@ -24,7 +24,7 @@
       excludesfile = /etc/gitignore
   '';
 
-  environment.etc."gitignore".text = ''
+  home.file."gitignore".text = ''
     .DS_Store
     *.swp
   '';
