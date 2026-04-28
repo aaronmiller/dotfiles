@@ -17,9 +17,6 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
-export SSL_CERT_FILE="/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt";
-export NIX_SSL_CERT_FILE="/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt";
-
 for f in /etc/bashrc /etc/zshrc; do
   if [ -f "$f" ] && ! grep -q "darwin-rebuild" "$f"; then
     sudo mv "$f" "$f.before-nix-darwin"
