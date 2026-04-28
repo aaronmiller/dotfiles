@@ -4,8 +4,6 @@
     pkgs.aspell
     pkgs.btop
     pkgs.fd
-    pkgs.gh
-    pkgs.git
     pkgs.gnupg
     pkgs.ipcalc
     pkgs.jq
