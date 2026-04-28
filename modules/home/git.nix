@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
-  home.file."gitconfig".text = ''
+  home.file.".gitconfig".text = ''
     [core]
       editor = vim
     [pull]
@@ -24,7 +24,7 @@
       excludesfile = /etc/gitignore
   '';
 
-  home.file."gitignore".text = ''
+  home.file.".gitignore".text = ''
     .DS_Store
     *.swp
   '';
