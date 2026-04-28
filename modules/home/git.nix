@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
-  environment.etc."gitconfig".text = ''
+  home.file."gitconfig".text = ''
     [core]
       editor = vim
     [pull]
