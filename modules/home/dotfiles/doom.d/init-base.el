@@ -13,7 +13,6 @@
        treemacs
        vc-gutter
        workspaces
-       zen
 
        :editor
        (evil +everywhere)
