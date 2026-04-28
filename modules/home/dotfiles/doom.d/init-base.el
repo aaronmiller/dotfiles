@@ -53,6 +53,7 @@
        data
        emacs-lisp
        go
+       java
        json
        (latex +cdlatex +latexmk)
        lua
