@@ -18,12 +18,6 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
-for f in /etc/bashrc /etc/zshrc; do
-  if [ -f "$f" ] && ! grep -q "darwin-rebuild" "$f"; then
-    sudo mv "$f" "$f.before-nix-darwin"
-  fi
-done
-
 sudo USER="$REAL_USER" \
      HOME="$REAL_HOME" \
      HOST="$REAL_HOST" \
