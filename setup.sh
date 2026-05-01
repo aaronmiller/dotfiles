@@ -1,6 +1,5 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
 
-sudo /bin/rm -rf /etc/nix /etc/*.{backup-before-nix,before-nix-darwin}
+set -euo pipefail
 
-/usr/bin/curl -L https://nixos.org/nix/install | /bin/sh -s -- --daemon --yes
+curl -L https://nixos.org/nix/install | sh -s -- --daemon
