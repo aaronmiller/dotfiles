@@ -1,10 +1,10 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 REAL_USER=${SUDO_USER:-$(whoami)}
 REAL_HOME=$(eval echo "~$REAL_USER")
 REAL_HOST=$(/bin/hostname -s)
-FLAKE_PATH="$REAL_HOME/dotfiles"
 
 while getopts "d:" opt; do
   case $opt in
