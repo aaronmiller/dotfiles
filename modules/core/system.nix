@@ -11,5 +11,5 @@
 
   environment.shells = [ pkgs.zsh ];
   programs.bash.enable = true;
-  system.stateVersion = 5;
+  system.stateVersion = 25.11;
 }

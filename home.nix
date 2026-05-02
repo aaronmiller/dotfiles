@@ -3,7 +3,7 @@
 {
   home.username = user;
   home.homeDirectory = lib.mkForce "/Users/${user}";
-  home.stateVersion = lib.mkDefault "24.11";
+  home.stateVersion = lib.mkDefault "25.11";
 
   imports = [
     ./modules/home/env.nix
