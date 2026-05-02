@@ -3,7 +3,6 @@
 {
   nix.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  services.nix-daemon.enable = true;
 
   users.users.${user} = {
     home = "/Users/${user}";
