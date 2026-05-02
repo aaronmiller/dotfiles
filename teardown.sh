@@ -18,8 +18,6 @@ if [ -f "/etc/zshrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/zshrc.before-nix-darwin /etc/zshrc
 fi
 
-/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/zshrc 2>/dev/null
-
 if [ -f "/etc/bashrc.backup-before-nix" ]; then
   /usr/bin/sudo /bin/mv /etc/bashrc.backup-before-nix /etc/bashrc
 fi
@@ -27,8 +25,6 @@ fi
 if [ -f "/etc/bashrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/bashrc.before-nix-darwin /etc/bashrc
 fi
-
-/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/bashrc 2>/dev/null
 
 if [ -f "/etc/bash.bashrc.backup-before-nix" ]; then
   /usr/bin/sudo /bin/mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
@@ -38,7 +34,7 @@ if [ -f "/etc/bash.bashrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/bash.bashrc.before-nix-darwin /etc/bash.bashrc
 fi
 
-/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/bash.bashrc 2>/dev/null
+/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/zshrc /etc/bashrc /etc/bash.bashrc 2>/dev/null
 
 # Stop and remove the Nix daemon services
 /usr/bin/sudo /bin/launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist 2>/dev/null
@@ -54,7 +50,7 @@ if [ -f "/Library/LaunchDaemons/org.nixos.darwin-store.plist" ]; then
 fi
 
 # Remove the nixbld group and the _nixbuildN users
-if /usr/bin/sudo /usr/bin/dscl . -list /Groups | /usr/bin/grep nixbld; then
+if /usr/bin/sudo /usr/bin/dscl . -list /Groups | /usr/bin/grep nixbld > /dev/null 2>&1; then
   /usr/bin/sudo /usr/bin/dscl . -delete /Groups/nixbld
   for u in $(/usr/bin/sudo /usr/bin/dscl . -list /Users | /usr/bin/grep _nixbld); do /usr/bin/sudo /usr/bin/dscl . -delete /Users/$u; done
 fi
