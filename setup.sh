@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-sudo rm -rf /etc/nix /etc/*.{backup-before-nix,before-nix-darwin}
+/usr/bin/sudo /bin/rm -rf /etc/nix /etc/*.{backup-before-nix,before-nix-darwin}
 
 export VERSION=2.34.6
-curl -L https://releases.nixos.org/nix/nix-$VERSION/install | sh -s -- --daemon --yes
+/usr/bin/curl -L https://releases.nixos.org/nix/nix-$VERSION/install | /bin/sh -s -- --daemon --yes
