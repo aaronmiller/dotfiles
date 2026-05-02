@@ -34,7 +34,7 @@ if [ -f "/etc/bash.bashrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/bash.bashrc.before-nix-darwin /etc/bash.bashrc
 fi
 
-/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/zshrc /etc/bashrc /etc/bash.bashrc 2>/dev/null
+/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\s*# Nix\n.*?\n# End Nix\s*//gs" /etc/zshrc /etc/bashrc /etc/bash.bashrc 2>/dev/null
 
 # Stop and remove the Nix daemon services
 /usr/bin/sudo /bin/launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist 2>/dev/null
