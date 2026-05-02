@@ -11,40 +11,34 @@ set -uo pipefail
 ## End Nix
 
 if [ -f "/etc/zshrc.backup-before-nix" ]; then
- /usr/bin/sudo /bin/mv /etc/zshrc.backup-before-nix /etc/zshrc
-else
-  EDITOR=/usr/bin/vi /etc/zshrc
+  /usr/bin/sudo /bin/mv /etc/zshrc.backup-before-nix /etc/zshrc
 fi
 
 if [ -f "/etc/zshrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/zshrc.before-nix-darwin /etc/zshrc
-else
-  EDITOR=/usr/bin/vi /etc/zshrc
 fi
+
+/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/zshrc 2>/dev/null
 
 if [ -f "/etc/bashrc.backup-before-nix" ]; then
   /usr/bin/sudo /bin/mv /etc/bashrc.backup-before-nix /etc/bashrc
-else
-  EDITOR=/usr/bin/vi /etc/bashrc
 fi
 
 if [ -f "/etc/bashrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/bashrc.before-nix-darwin /etc/bashrc
-else
-  EDITOR=/usr/bin/vi /etc/bashrc
 fi
+
+/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/bashrc 2>/dev/null
 
 if [ -f "/etc/bash.bashrc.backup-before-nix" ]; then
   /usr/bin/sudo /bin/mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
-else
-  EDITOR=/usr/bin/vi /etc/bash.bashrc
 fi
 
 if [ -f "/etc/bash.bashrc.before-nix-darwin" ]; then
   /usr/bin/sudo /bin/mv /etc/bash.bashrc.before-nix-darwin /etc/bash.bashrc
-else
-  EDITOR=/usr/bin/vi /etc/bash.bashrc
 fi
+
+/usr/bin/sudo /usr/bin/perl -0777 -i -pe "s/\n*# Nix\n.*?\n# End Nix\n*/\n/gs" /etc/bash.bashrc 2>/dev/null
 
 # Stop and remove the Nix daemon services
 /usr/bin/sudo /bin/launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist 2>/dev/null
