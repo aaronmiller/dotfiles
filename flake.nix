@@ -8,15 +8,15 @@
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
-
   {
     darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
+      specialArgs = { inherit self inputs; };
+
       modules = [
         ./modules/system
         ./modules/homebrew
       ];
 
-      specialArgs = { inherit self inputs; };
     };
   };
 }

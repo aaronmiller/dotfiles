@@ -1,7 +1,6 @@
 { pkgs, lib, config, ... }: {
 
   environment.systemPackages = [
-    pkgs.alacritty
     pkgs.btop
     pkgs.fd
     pkgs.gnupg

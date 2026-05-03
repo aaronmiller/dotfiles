@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, user, ... }:
 
 let
   isIntel = pkgs.stdenv.hostPlatform.isx86_64;
@@ -6,6 +6,8 @@ let
 in
 {
   config = {
+    system.primaryUser = "a";
+
     homebrew = {
       enable = true;
       onActivation.cleanup = "zap";
@@ -13,6 +15,7 @@ in
       onActivation.upgrade = true;
 
       casks = [
+        "alacritty"
         "google-chrome"
         "hammerspoon"
         "logi-options+"
