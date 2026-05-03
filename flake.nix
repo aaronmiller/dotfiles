@@ -13,6 +13,7 @@
     darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
       modules = [
         ./modules/system
+        ./modules/homebrew
       ];
 
       specialArgs = { inherit self inputs; };
