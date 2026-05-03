@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
-  modules.brew.extraCasks = [
+  extraCasks = [
     "android-file-transfer"
     "anki"
     "discord"

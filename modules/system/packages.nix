@@ -1,6 +1,7 @@
 { pkgs, lib, config, ... }: {
 
   environment.systemPackages = [
+    pkgs.alacritty
     pkgs.btop
     pkgs.fd
     pkgs.gnupg
@@ -10,7 +11,7 @@
     pkgs.nmap
     pkgs.pwgen
     pkgs.ripgrep
-    pkgs.shellcheck
+    pkgs.stow
     pkgs.subnetcalc
     pkgs.tmux
     pkgs.tree
