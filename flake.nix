@@ -15,6 +15,7 @@
       modules = [
         ./modules/system
         ./modules/homebrew
+        ./modules/zsh
       ];
 
     };
