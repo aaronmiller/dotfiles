@@ -1,23 +1,10 @@
-{ pkgs, lib, config, user, ... }:
+{ pkgs, lib, config, ... }:
 
 let
   isIntel = pkgs.stdenv.hostPlatform.isx86_64;
   brewPrefix = if isIntel then "/usr/local" else "/opt/homebrew";
-
-  baseCasks = [
-    "google-chrome"
-    "hammerspoon"
-    "logi-options+"
-    "monitorcontrol"
-    "rectangle"
-    "stats"
-  ];
 in
 {
-  imports = [
-    ./casks.nix
-  ];
-
   config = {
     homebrew = {
       enable = true;
@@ -25,7 +12,14 @@ in
       onActivation.autoUpdate = true;
       onActivation.upgrade = true;
 
-      casks = baseCasks ++ extraCasks;
+      casks = [
+        "google-chrome"
+        "hammerspoon"
+        "logi-options+"
+        "monitorcontrol"
+        "rectangle"
+        "stats"
+      ];
     };
 
     environment.variables = {
